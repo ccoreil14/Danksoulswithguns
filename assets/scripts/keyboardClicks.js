@@ -7,6 +7,15 @@ var KEYCODE_A = 65;
 var KEYCODE_W = 87;
 var KEYCODE_D = 68;
 var KEYCODE_S = 83;
+//var mouseX, mouseY;
+//
+//function mouseInit() {
+//    stage.on("click", function (evt) {
+//        mouseX = Math.floor(evt.stageX);
+//        mouseY = Math.floor(evt.stageY);
+//        console.log(mouseX + " hereda Y " + mouseY);
+//    });
+//}
 
 function handleKeyDown(evt) {
     if (!evt) {
