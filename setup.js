@@ -19,7 +19,7 @@ manifest = [
 	{src:"images/gameover.jpg", id:"gameover"},
 	{src:"images/instructions.jpg", id:"instructions"},
 	{src:"images/title.jpg", id:"title"},
-	{src:"images/play.jpg", id:"playarea"},
+	{src:"images/moon.png", id:"playarea"},
 	{src:"images/instructionsButton.png", id:"instructionsButton"},
 	{src:"images/playButton.png", id:"playButton"},
 	{src:"images/menuButton.png", id:"menuButton"},

@@ -16,6 +16,7 @@ function stateChange() {
         playScreen.visible = false;
         overScreen.visible = false;
         player.visible = false;
+        healthBar.visible = false;
         break;
         //instructions state
     case 200:
@@ -29,8 +30,6 @@ function stateChange() {
         break;
         //game state
     case 300:
-        player.x = 400;
-        player.y = 380;
         looop = true;
         instructionsButton.visible = false;
         playButton.visible = false;
@@ -40,10 +39,13 @@ function stateChange() {
         playScreen.visible = true;
         overScreen.visible = false;
         player.visible = true;
+        healthBar.visible = true;
         break;
         //game over state
     case 400:
         player.visible = false;
+        healthBar.visible = false;
+        healthSize = 1.0;
         looop = false;
         addFinalScore();
         score.text = "Score: 0";

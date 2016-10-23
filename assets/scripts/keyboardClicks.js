@@ -40,6 +40,7 @@ function handleKeyDown(evt) {
         //Below the + or - 30 represents where we want the players bounds to be
     case KEYCODE_A:
         if (inbounds(player.x - 30, player.y)) {
+//            console.log("a");
             player.x -= 10;
         }
         return false;
