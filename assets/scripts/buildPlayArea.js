@@ -89,10 +89,10 @@ function createDuckfoot(direction){
 function moveTurrets(){
 	for(var i = 0; i < turrets.length; i++){
 		if(turrets[i].rotation === 0){
-			if(turrets[i].y === 25){
+			if(turrets[i].y === 50){
 				leftMovementUp = false;
 			}
-			if(turrets[i].y === 575){
+			if(turrets[i].y === 600){
 				leftMovementUp = true;
 			}
 			
@@ -102,6 +102,54 @@ function moveTurrets(){
 			}else {
 				turrets[i].y += 5;
 				leftMovementUp = true;
+			}
+			
+		}else if(turrets[i].rotation === 90){
+			if(turrets[i].x === 25){
+				upMovementLeft = false;
+			}
+			if(turrets[i].x === 720){
+				upMovementLeft = true;
+			}
+			
+			if(upMovementLeft){
+				turrets[i].x -= 5;
+				upMovementLeft = false;
+			}else {
+				turrets[i].x += 5;
+				upMovementLeft = true;
+			}
+			
+		}else if(turrets[i].rotation === 180){
+			if(turrets[i].y === 50){
+				rightMovementUp = false;
+			}
+			if(turrets[i].y === 600){
+				rightMovementUp = true;
+			}
+			
+			if(rightMovementUp){
+				turrets[i].y -= 5;
+				rightMovementUp = false;
+			}else {
+				turrets[i].y += 5;
+				rightMovementUp = true;
+			}
+			
+		}else if(turrets[i].rotation === 270){
+			if(turrets[i].x === 25){
+				downMovementLeft = false;
+			}
+			if(turrets[i].x === 720){
+				downMovementLeft = true;
+			}
+			
+			if(downMovementLeft){
+				turrets[i].x -= 5;
+				downMovementLeft = false;
+			}else {
+				turrets[i].x += 5;
+				downMovementLeft = true;
 			}
 			
 		}
