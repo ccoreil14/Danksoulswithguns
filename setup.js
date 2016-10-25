@@ -14,13 +14,16 @@ function setupCanvas() {
     canvas.height = 600;
     stage = new createjs.Stage(canvas);
 }
- 
+
 manifest = [
 	{src:"images/gameover.jpg", id:"gameover"},
 	{src:"images/instructions.jpg", id:"instructions"},
 	{src:"images/title.jpg", id:"title"},
-	{src:"images/play.jpg", id:"playarea"},
-	{src:"images/sprites.png", id:"sprites"},
+	{src:"images/moon.png", id:"levelOne"},
+	{src:"images/space.png", id:"levelTwo"},
+	{src:"images/A51.png", id:"levelThree"},
+	{src:"images/duckfootTurret.png", id:"duckfoot"},
+	{src:"images/duckfootBullet.png", id:"duckfootBullet"},
 	{src:"images/instructionsButton.png", id:"instructionsButton"},
 	{src:"images/playButton.png", id:"playButton"},
 	{src:"images/menuButton.png", id:"menuButton"},
@@ -32,10 +35,12 @@ manifest = [
 	{src:"scripts/buttonControls" + jsEnd},
 	{src:"scripts/mainLoop" + jsEnd},
 	{src:"scripts/mouseInfo" + jsEnd},
-	{src:"scripts/stateMachine" + jsEnd}
+	{src:"scripts/stateMachine" + jsEnd},
+	{src:"scripts/createPlayer" + jsEnd},
+	{src:"scripts/duckfootBullet" + jsEnd}
 	
 ];
- 
+
 var queue;
 
 function loadFiles() {
@@ -44,36 +49,20 @@ function loadFiles() {
     queue.loadManifest(manifest);
 }
 
-var walk, blocks, blockArray;
-
-blockArray = [];
-
 function displaySprites() {
-    walk.x=400;
-    walk.y=380;
-    walk.gotoAndPlay("walkRight");
-    stage.addChild(walk);
+    
 	
-	for(i = 0; i < 5; i++){
-		blocks.x=i*31+20;
-		blocks.y=215;
-		blocks.gotoAndStop(i);
-		blockArray.push(blocks.clone());
-	}
-	for(j = 0; j < 5; j++){
-		stage.addChild(blockArray[j]);	
-	}
 }
  
 function loadComplete(evt) {
 	createPlayArea();
-	createGameTimer();
 	createGameOver();
 	createTitle();
 	createInstructions();
 	setupButtons();
 	initCoorText();
 	mouseInit();
+	createGameTimer();
 }
 
 (function main(){

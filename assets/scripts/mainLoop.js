@@ -6,6 +6,7 @@ var looop = false;
 function loop() {
 	stateChange();
 	runGameTimer();
+	updateDuckfootBullets();
     stage.update();
 }
 createjs.Ticker.addEventListener("tick", loop);

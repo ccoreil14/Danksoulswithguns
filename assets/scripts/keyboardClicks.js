@@ -35,7 +35,7 @@ function handleKeyDown(evt) {
 
         return false;
     case KEYCODE_SPACE:
-
+			makeDuckfootBullet();
         return false;
         //Below the + or - 30 represents where we want the players bounds to be
     case KEYCODE_A:

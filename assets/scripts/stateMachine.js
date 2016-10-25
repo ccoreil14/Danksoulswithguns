@@ -26,8 +26,24 @@ function stateChange(){
 			playScreen.visible = false;
 			overScreen.visible = false;
 			break;
-		//game state
+		//levelSelect state
 		case 300:
+			
+			break;
+		//levelOne state
+		case 400:
+			
+			break;
+		//levelTwo state
+		case 500:
+			
+			break;
+		//levelThree state
+		case 600:
+			
+			break;			
+		//game state
+		case 700:
 			looop = true;
 			instructionsButton.visible = false;
 			playButton.visible = false;
@@ -38,8 +54,7 @@ function stateChange(){
 			overScreen.visible = false;
 			break;
 		//game over state
-		case 400:
-			walk.visible = false;
+		case 800:
 			looop = false;
 			addFinalScore();
 			score.text = "Score: 0";
