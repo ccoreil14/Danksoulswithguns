@@ -6,6 +6,7 @@ var looop = false;
 function loop() {
     stateChange();
     runGameTimer();
+	updateDuckfootBullets();
     stage.update();
 }
 createjs.Ticker.addEventListener("tick", loop);
@@ -31,7 +32,7 @@ function runGameTimer() {
 
     if (frameCount % (FPS / 10) === 0) {
 
-        if (state === 300) {
+        if (state === 700) {
             healthSize -= 0.01;
             updateHealth();
         }

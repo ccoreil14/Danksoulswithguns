@@ -14,11 +14,16 @@ function setupCanvas() {
     canvas.height = 600;
     stage = new createjs.Stage(canvas);
 }
- 
+
 manifest = [
 	{src:"images/gameover.jpg", id:"gameover"},
 	{src:"images/instructions.jpg", id:"instructions"},
 	{src:"images/title.jpg", id:"title"},
+	{src:"images/moon.png", id:"levelOne"},
+	{src:"images/space.png", id:"levelTwo"},
+	{src:"images/A51.png", id:"levelThree"},
+	{src:"images/duckfootTurret.png", id:"duckfoot"},
+	{src:"images/duckfootBullet.png", id:"duckfootBullet"},
 	{src:"images/moon.png", id:"playarea"},
 	{src:"images/instructionsButton.png", id:"instructionsButton"},
 	{src:"images/playButton.png", id:"playButton"},
@@ -32,12 +37,12 @@ manifest = [
 	{src:"scripts/buttonControls" + jsEnd},
 	{src:"scripts/mainLoop" + jsEnd},
 	{src:"scripts/mouseInfo" + jsEnd},
+	{src:"scripts/stateMachine" + jsEnd},
 	{src:"scripts/createPlayer" + jsEnd},
-	{src:"scripts/turret" + jsEnd},
-	{src:"scripts/stateMachine" + jsEnd}
+	{src:"scripts/duckfootBullet" + jsEnd}
 	
 ];
- 
+
 var queue;
 
 function loadFiles() {
@@ -66,14 +71,13 @@ function displaySprites() {
 function loadComplete(evt) {
     createPlayArea();
 	createPlayer();
-	createGameTimer();
 	createGameOver();
 	createTitle();
 	createInstructions();
 	setupButtons();
 	initCoorText();
 	mouseInit();
-    
+	createGameTimer();
 }
 
 (function main(){
