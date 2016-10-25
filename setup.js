@@ -33,6 +33,7 @@ manifest = [
 	{src:"scripts/mainLoop" + jsEnd},
 	{src:"scripts/mouseInfo" + jsEnd},
 	{src:"scripts/createPlayer" + jsEnd},
+	{src:"scripts/turret" + jsEnd},
 	{src:"scripts/stateMachine" + jsEnd}
 	
 ];
