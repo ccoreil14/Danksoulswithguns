@@ -17,15 +17,15 @@ function setupButtons() {
     stage.addChild(playButton);
     stage.enableMouseOver();
     instructionsButton.on("click", function (evt) {
-        state = 200
+        state = 200;
     });
     menuButton.on("click", function (evt) {
-        state = 100
+        state = 100;
     });
     playButton.on("click", function (evt) {
         player.x = 400;
         player.y = 380;
-        state = 300;
+        state = 700;
         displaySprites();
 
     });
