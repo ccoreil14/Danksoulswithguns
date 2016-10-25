@@ -48,6 +48,7 @@ function stateChange() {
 			break;			
 		//game state
 		case 700:
+			looop = true;
 			instructionsButton.visible = false;
         playButton.visible = false;
         menuButton.visible = false;

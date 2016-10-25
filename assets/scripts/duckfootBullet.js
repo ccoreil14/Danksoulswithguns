@@ -3,39 +3,46 @@ var duckfootBullets = [];
 var duckfootBulletSpeed = 15;
 
 function makeDuckfootBullet(){
-	duckfootBullet = new createjs.Bitmap(queue.getResult("duckfootBullet"));
-	if(turret.rotation === 0){
-		duckfootBullet.x = turret.x + 60;
-		duckfootBullet.y = turret.y + 25;
-	}else if(turret.rotation === 90){
-		duckfootBullet.x = turret.x + 25;
-		duckfootBullet.y = turret.y;
-	}else if(turret.rotation === 180){
-		duckfootBullet.x = turret.x - 10;
-		duckfootBullet.y = turret.y + 25;
-	}else if(turret.rotation === 270){
-		duckfootBullet.x = turret.x - 25;
-		duckfootBullet.y = turret.y - 10;
+	for(var i = 0; i < turrets.length; i++){
+	  duckfootBullet = new createjs.Bitmap(queue.getResult("duckfootBullet"));
+	if(turrets[i].rotation === 0){
+		duckfootBullet.x = turrets[i].x + 10;
+		duckfootBullet.y = turrets[i].y - 25;
+		duckfootBullet.rotation = 0;
+	}else if(turrets[i].rotation === 90){
+		duckfootBullet.x = turrets[i].x + 25;
+		duckfootBullet.y = turrets[i].y;
+		duckfootBullet.rotation = 90;
+	}else if(turrets[i].rotation === 180){
+		duckfootBullet.x = turrets[i].x - 10;
+		duckfootBullet.y = turrets[i].y + 25;
+		duckfootBullet.rotation = 180;
+	}else if(turrets[i].rotation === 270){
+		duckfootBullet.x = turrets[i].x - 25;
+		duckfootBullet.y = turrets[i].y - 10;
+		duckfootBullet.rotation = 270;
 	}
 	
 	duckfootBullets.push(duckfootBullet);
 	stage.addChild(duckfootBullet);
+	}
+	
 }
 
 function updateDuckfootBullets() {
-    for (i = 0; i < duckfootBullets.length; i++) {
-		if(turret.rotation === 0){
+		for (var i = 0; i < duckfootBullets.length; i++) {
+		if(duckfootBullets[i].rotation === 0){
 			duckfootBullets[i].x += duckfootBulletSpeed;
 		}
-		if(turret.rotation === 90){
+		if(duckfootBullets[i].rotation === 90){
 			duckfootBullet.rotation = 90;
 			duckfootBullets[i].y += duckfootBulletSpeed;
 		}
-		if(turret.rotation === 180){
+		if(duckfootBullets[i].rotation === 180){
 			duckfootBullet.rotation = 180;
 			duckfootBullets[i].x -= duckfootBulletSpeed;
 		}
-		if(turret.rotation === 270){
+		if(duckfootBullets[i].rotation === 270){
 			duckfootBullet.rotation = 270;
 			duckfootBullets[i].y -= duckfootBulletSpeed;
 		}
@@ -46,4 +53,5 @@ function updateDuckfootBullets() {
             duckfootBullets.splice(i--, 1);
         }
     }
+    
 }
