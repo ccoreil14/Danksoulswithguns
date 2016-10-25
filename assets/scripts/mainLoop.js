@@ -7,6 +7,8 @@ var looop = false;
 function loop() {
     stateChange();
     runGameTimer();
+    updateBullets();
+    movePlayer();
 	updateDuckfootBullets();
     stage.update();
 }
