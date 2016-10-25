@@ -30,6 +30,26 @@ manifest = [
     },
     {
         src: "images/moon.png",
+        id: "levelOne"
+    },
+    {
+        src: "images/space.png",
+        id: "levelTwo"
+    },
+    {
+        src: "images/A51.png",
+        id: "levelThree"
+    },
+    {
+        src: "images/duckfootTurret.png",
+        id: "duckfoot"
+    },
+    {
+        src: "images/duckfootBullet.png",
+        id: "duckfootBullet"
+    },
+    {
+        src: "images/moon.png",
         id: "playarea"
     },
     {
@@ -47,13 +67,6 @@ manifest = [
     {
         src: "images/ufo.png",
         id: "ufo"
-    },
-    {
-        src: "images/shotNorm.png",
-        id: "shotnorm"
-    },
-    {
-        src: "scripts/playerBullet" + jsEnd
     },
     {
         src: "scripts/keyboardClicks" + jsEnd
@@ -80,10 +93,20 @@ manifest = [
         src: "scripts/mouseInfo" + jsEnd
     },
     {
+        src: "scripts/stateMachine" + jsEnd
+    },
+    {
         src: "scripts/createPlayer" + jsEnd
     },
     {
-        src: "scripts/stateMachine" + jsEnd
+        src: "scripts/duckfootBullet" + jsEnd
+    },
+    {
+        src: "images/shotNorm.png",
+        id: "shotnorm"
+    },
+    {
+        src: "scripts/playerBullet" + jsEnd
     }
 
 ];
@@ -116,14 +139,13 @@ function displaySprites() {
 function loadComplete(evt) {
     createPlayArea();
     createPlayer();
-    createGameTimer();
     createGameOver();
     createTitle();
     createInstructions();
     setupButtons();
     initCoorText();
     mouseInit();
-
+    createGameTimer();
 }
 
 (function main() {
