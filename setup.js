@@ -69,6 +69,9 @@ manifest = [
         id: "ufo"
     },
     {
+        src: "scripts/duckfootBullet" + jsEnd
+    },
+    {
         src: "scripts/keyboardClicks" + jsEnd
     },
     {
@@ -97,9 +100,6 @@ manifest = [
     },
     {
         src: "scripts/createPlayer" + jsEnd
-    },
-    {
-        src: "scripts/duckfootBullet" + jsEnd
     },
     {
         src: "images/shotNorm.png",

@@ -32,6 +32,7 @@ function runGameTimer() {
     if (looop) {
         frameCount += 1;
         timeUntilFire -= 1;
+		moveTurrets();
     }
 
 
