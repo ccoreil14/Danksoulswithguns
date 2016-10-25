@@ -18,7 +18,7 @@ function mouseInit() {
         mouseY.text = "Y: " + evt.stageY;
     });
     stage.on("click", function (evt) {
-        if (state == 300) {
+        if (state == 700) {
             playerShoot(evt.stageX, evt.stageY);
         }
     });
