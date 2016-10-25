@@ -24,9 +24,11 @@ manifest = [
 	{src:"images/A51.png", id:"levelThree"},
 	{src:"images/duckfootTurret.png", id:"duckfoot"},
 	{src:"images/duckfootBullet.png", id:"duckfootBullet"},
+	{src:"images/moon.png", id:"playarea"},
 	{src:"images/instructionsButton.png", id:"instructionsButton"},
 	{src:"images/playButton.png", id:"playButton"},
 	{src:"images/menuButton.png", id:"menuButton"},
+	{src:"images/ufo.png", id:"ufo"},
 	{src:"scripts/keyboardClicks" + jsEnd},
 	{src:"scripts/buildGameOver" + jsEnd},
 	{src:"scripts/buildPlayArea" + jsEnd},
@@ -49,13 +51,26 @@ function loadFiles() {
     queue.loadManifest(manifest);
 }
 
+var blocks, blockArray;
+
+blockArray = [];
+
 function displaySprites() {
-    
 	
+//	for(i = 0; i < 5; i++){
+//		blocks.x=i*31+20;
+//		blocks.y=215;
+//		blocks.gotoAndStop(i);
+//		blockArray.push(blocks.clone());
+//	}
+//	for(j = 0; j < 5; j++){
+//		stage.addChild(blockArray[j]);	
+//	}
 }
  
 function loadComplete(evt) {
-	createPlayArea();
+    createPlayArea();
+	createPlayer();
 	createGameOver();
 	createTitle();
 	createInstructions();

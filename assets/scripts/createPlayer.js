@@ -1,13 +1,30 @@
-var player = new createjs.Shape();
-shape.graphics.beginFill("#ff0000").drawRect(-20, -20, 40, 40);
+var player;
 
-player.x = 400;
-player.y = 300;
+
 
 function createPlayer() {
     //When we make it into a sprite we can put the call to the "fly" animation for the UFO
     //player.gotoAndPlay("fly");
+
+    var characterSheet = new createjs.SpriteSheet({
+        images: [queue.getResult("ufo")],
+        frames: [[0, 0, 274, 274, 0, 3, 3.95], [0, 0, 274, 274, 0, 3, 3.95], [274, 0, 274, 274, 0, 3, 3.95], [274, 0, 274, 274, 0, 3, 3.95], [548, 0, 274, 274, 0, 2, 3.95], [548, 0, 274, 274, 0, 2, 3.95], [0, 274, 274, 274, 0, 2, 3.95], [0, 274, 274, 274, 0, 2, 3.95], [274, 274, 274, 274, 0, 3, 3.95], [274, 274, 274, 274, 0, 3, 3.95], [548, 274, 274, 274, 0, 3, 3.95], [548, 274, 274, 274, 0, 3, 3.95], [0, 548, 274, 274, 0, 3, 3.95], [0, 548, 274, 274, 0, 3, 3.95], [274, 548, 274, 274, 0, 3, 3.95], [548, 548, 274, 274, 0, 3, 3.95], [0, 822, 274, 274, 0, 3, 3.95], [0, 822, 274, 274, 0, 3, 3.95], [274, 822, 275, 275, 0, 4, 3.95], [274, 822, 275, 275, 0, 4, 3.95], [549, 822, 274, 274, 0, 3, 3.95], [549, 822, 274, 274, 0, 3, 3.95], [0, 1097, 274, 274, 0, 3, 3.95], [0, 1097, 274, 274, 0, 3, 3.95]],
+        animations: {
+            rotate: [0, 23, "rotate"],
+        }
+    });
+    
+
+    player = new createjs.Sprite(characterSheet);
+    player.x = 400;
+    player.y = 380;
+    player.scaleX = 0.2;
+    player.scaleY = 0.2;
+
+    player.gotoAndPlay("rotate");
     stage.addChild(player);
+
+
 }
 
 function playerShoot() {
