@@ -21,7 +21,7 @@ manifest = [
         id: "gameover"
     },
     {
-        src: "images/instructions.jpg",
+        src: "images/instructions.png",
         id: "instructions"
     },
     {
