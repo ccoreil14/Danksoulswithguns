@@ -147,7 +147,7 @@ function loadComplete(evt) {
     setupButtons();
     initCoorText();
     mouseInit();
-    createGameTimer();
+//    createGameTimer();
 }
 
 (function main() {
