@@ -5,6 +5,10 @@ var healthColor = "#0D0";
 var healthSize = 1.0;
 var graphics = new createjs.Graphics();
 var turret;
+var leftMovementUp = true;
+var rightMovementUp = true;
+var downMovementLeft = true;
+var upMovementLeft = true;
 
 function createPlayArea() {
     playScreen = new createjs.Bitmap(queue.getResult("levelOne"));
@@ -80,6 +84,28 @@ function createDuckfoot(direction){
 		turret.rotation = 270;
 	}
 	
+}
+
+function moveTurrets(){
+	for(var i = 0; i < turrets.length; i++){
+		if(turrets[i].rotation === 0){
+			if(turrets[i].y === 25){
+				leftMovementUp = false;
+			}
+			if(turrets[i].y === 575){
+				leftMovementUp = true;
+			}
+			
+			if(leftMovementUp){
+				turrets[i].y -= 5;
+				leftMovementUp = false;
+			}else {
+				turrets[i].y += 5;
+				leftMovementUp = true;
+			}
+			
+		}
+	}
 }
 
 function createHealth() {
