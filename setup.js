@@ -113,6 +113,8 @@ manifest = [
 
 var queue;
 
+var collisionMethod = ndgmr.checkPixelCollision;
+
 function loadFiles() {
     queue = new createjs.LoadQueue(true, "assets/");
     queue.on("complete", loadComplete, this);
@@ -145,7 +147,7 @@ function loadComplete(evt) {
     setupButtons();
     initCoorText();
     mouseInit();
-    createGameTimer();
+//    createGameTimer();
 }
 
 (function main() {

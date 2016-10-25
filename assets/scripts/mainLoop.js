@@ -9,7 +9,7 @@ function loop() {
     runGameTimer();
     updateBullets();
     movePlayer();
-	updateDuckfootBullets();
+    updateDuckfootBullets();
     stage.update();
 }
 createjs.Ticker.addEventListener("tick", loop);
@@ -31,23 +31,30 @@ function resetGameTimer() {
 function runGameTimer() {
     if (looop) {
         frameCount += 1;
-		timeUntilFire -= 1;
+        timeUntilFire -= 1;
 		moveTurrets();
     }
 
-	
-	if(timeUntilFire === 0){
-		timeUntilFire = 30;
-		makeDuckfootBullet();
-	}
-	
-    if (frameCount % (FPS / 10) === 0) {
 
+    if (timeUntilFire === 0) {
+        timeUntilFire = 30;
+        makeDuckfootBullet();
+    }
+
+    if (frameCount % (FPS / 10) === 0) {
         if (state === 700) {
-            healthSize -= 0.01;
-            updateHealth();
+            for (i = 0; i < duckfootBullets.length; i++) {
+                if (collisionMethod(duckfootBullets[i], player)) {
+                    healthSize -= 0.05;
+                }
+                updateHealth();
+
+                if (healthSize <= 0) {
+                    1
+                    state = 800;
+                }
+            }
         }
-        gameTimer.text = frameCount / (FPS);
     }
 
 }
