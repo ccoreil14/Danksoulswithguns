@@ -13,7 +13,7 @@ function createPlayer() {
             rotate: [0, 23, "rotate"],
         }
     });
-    
+
 
     player = new createjs.Sprite(characterSheet);
     player.x = 400;
@@ -27,11 +27,8 @@ function createPlayer() {
 
 }
 
-function playerShoot() {
-    //We can put the function for creating a bullet here, we may need to pass more info to the function so I put ??? as a filler
-    //makeBullet(player.x, player.y, ???)
-
-    //Play a sound here, we could also set the volume of the sound here
+function playerShoot(mX, mY) {
+    makePlayerBullet(player.x, player.y, mX, mY);
 }
 
 function checkPlayerCollision() {

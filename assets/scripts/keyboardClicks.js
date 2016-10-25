@@ -7,6 +7,11 @@ var KEYCODE_A = 65;
 var KEYCODE_W = 87;
 var KEYCODE_D = 68;
 var KEYCODE_S = 83;
+
+var right = false;
+var left = false;
+var up = false;
+var down = false;
 //var mouseX, mouseY;
 //
 //function mouseInit() {
@@ -39,25 +44,16 @@ function handleKeyDown(evt) {
         return false;
         //Below the + or - 30 represents where we want the players bounds to be
     case KEYCODE_A:
-        if (inbounds(player.x - 30, player.y)) {
-//            console.log("a");
-            player.x -= 10;
-        }
+        left = true;
         return false;
     case KEYCODE_W:
-        if (inbounds(player.x, player.y - 30)) {
-            player.y -= 10;
-        }
+        up = true;
         return false;
     case KEYCODE_D:
-        if (inbounds(player.x + 30, player.y)) {
-            player.x += 10;
-        }
+        right = true;
         return false;
     case KEYCODE_S:
-        if (inbounds(player.x, player.y + 30)) {
-            player.y += 10
-        }
+        down = true;
         return false;
     }
 }
@@ -83,17 +79,32 @@ function handleKeyUp(evt) {
 
         return false;
     case KEYCODE_A:
-
+        left = false;
         return false;
     case KEYCODE_W:
-
+        up = false;
         return false;
     case KEYCODE_D:
-
+        right = false;
         return false;
     case KEYCODE_S:
-
+        down = false;
         return false;
+    }
+}
+
+function movePlayer() {
+    if (inbounds(player.x - 30, player.y) && left) {
+        player.x -= 10;
+    }
+    if (inbounds(player.x, player.y - 30) && up) {
+        player.y -= 10;
+    }
+    if (inbounds(player.x + 30, player.y) && right) {
+        player.x += 10;
+    }
+    if (inbounds(player.x, player.y + 30) && down) {
+        player.y += 10
     }
 }
 

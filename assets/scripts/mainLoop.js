@@ -6,6 +6,8 @@ var looop = false;
 function loop() {
     stateChange();
     runGameTimer();
+    updateBullets();
+    movePlayer();
     stage.update();
 }
 createjs.Ticker.addEventListener("tick", loop);
