@@ -62,9 +62,11 @@ function stateChange() {
         checkPowerupHit();
         player.visible = true;
         healthBar.visible = true;
+        isDead();
         break;
         //game over state
     case 800:
+
         healthSize = 1.0;
         looop = false;
         addFinalScore();
@@ -77,9 +79,11 @@ function stateChange() {
         playScreen.visible = false;
         overScreen.visible = true;
         victoryScreen.visible = false;
+
         break;
         //Victory state
     case 900:
+        deletePowerup();
         console.log("here");
         healthSize = 1.0;
         looop = false;
