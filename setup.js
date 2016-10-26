@@ -25,6 +25,10 @@ manifest = [
         id: "instructions"
     },
     {
+        src: "images/powerup.png",
+        id: "powerup"
+    },
+    {
         src: "images/title.jpg",
         id: "title"
     },
@@ -111,6 +115,9 @@ manifest = [
     },
     {
         src: "scripts/playerBullet" + jsEnd
+    },
+    {
+        src: "scripts/buildPowerup" + jsEnd
     },
     {
         src: "scripts/mainLoop" + jsEnd

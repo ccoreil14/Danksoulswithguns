@@ -23,9 +23,10 @@ function setupButtons() {
         state = 100;
     });
     playButton.on("click", function (evt) {
-		letThereBeTurrets();
+        letThereBeTurrets();
         player.x = 400;
         player.y = 380;
+        createPowerup();
         state = 700;
         displaySprites();
 
