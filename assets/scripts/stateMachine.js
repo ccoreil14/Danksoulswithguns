@@ -65,7 +65,7 @@ function stateChange() {
         break;
         //game over state
     case 800:
-
+		deletePowerup();
         healthSize = 1.0;
         looop = false;
         addFinalScore();

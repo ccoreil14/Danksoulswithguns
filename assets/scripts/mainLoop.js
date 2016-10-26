@@ -34,9 +34,8 @@ function resetGameTimer() {
 function runGameTimer() {
     if (turrets.length === 0) {
         for (i = 0; i < duckfootBullets.length; i++) {
-            duckfootBullets[i].visible = false;
+            stage.removeChild(duckfootBullets[i]);
         }
-        duckfootBullets.splice(0, duckfootBullets.length);
         if (state === 700) {
             state = 900;
         }
@@ -57,6 +56,16 @@ function runGameTimer() {
 
 function isDead() {
     if (healthSize <= 0) {
+		for (i = 0; i < playerbullets.length; i++) {
+            stage.removeChild(playerbullets[i]);
+        }
+		for (i = 0; i < playerbullets.length; i++) {
+            stage.removeChild(playerbullets[i]);
+        }
+		for(i = 0; i < turrets.length; i++){
+			stage.removeChild(turrets[i]);
+			console.log("its lying");
+		}
         state = 800;
     }
 }
