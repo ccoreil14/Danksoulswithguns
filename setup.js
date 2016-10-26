@@ -52,6 +52,10 @@ manifest = [
         src: "images/moon.png",
         id: "playarea"
     },
+	{
+        src: "images/victory.png",
+        id: "victory"
+    },
     {
         src: "images/instructionsButton.png",
         id: "instructionsButton"
@@ -101,12 +105,15 @@ manifest = [
     {
         src: "scripts/createPlayer" + jsEnd
     },
+	{
+        src: "scripts/playerBullet" + jsEnd
+    },
     {
         src: "images/shotNorm.png",
         id: "shotnorm"
     },
     {
-        src: "scripts/playerBullet" + jsEnd
+        src: "scripts/buildVictory" + jsEnd
     }
 
 ];
@@ -144,6 +151,7 @@ function loadComplete(evt) {
     createGameOver();
     createTitle();
     createInstructions();
+	createVictory();
     setupButtons();
     initCoorText();
     mouseInit();

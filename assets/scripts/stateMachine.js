@@ -73,5 +73,19 @@ function stateChange() {
         playScreen.visible = false;
         overScreen.visible = true;
         break;
+		case 900:
+			healthSize = 1.0;
+        looop = false;
+        addFinalScore();
+        score.text = "Score: 0";
+        instructionsButton.visible = false;
+        playButton.visible = false;
+        menuButton.visible = true;
+        titleScreen.visible = false;
+        instructionsScreen.visible = false;
+        playScreen.visible = false;
+        overScreen.visible = false;
+			victoryScreen.visible = true;
+        break;
 	}
 }

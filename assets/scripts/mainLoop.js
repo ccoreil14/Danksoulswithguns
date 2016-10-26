@@ -29,6 +29,9 @@ function resetGameTimer() {
 }
 
 function runGameTimer() {
+//	if(turrets.length === 0){
+//		state = 900;
+//	}
     if (looop) {
         frameCount += 1;
         timeUntilFire -= 1;
@@ -50,7 +53,7 @@ function runGameTimer() {
                 updateHealth();
 
                 if (healthSize <= 0) {
-                    1
+                    
                     state = 800;
                 }
             }
