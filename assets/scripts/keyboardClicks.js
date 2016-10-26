@@ -85,16 +85,16 @@ function handleKeyUp(evt) {
 }
 
 function movePlayer() {
-    if (inbounds(player.x - 30, player.y) && left) {
+    if (inbounds(player.x - 70, player.y) && left) {
         player.x -= 10;
     }
-    if (inbounds(player.x, player.y - 30) && up) {
+    if (inbounds(player.x, player.y - 40) && up) {
         player.y -= 10;
     }
-    if (inbounds(player.x + 30, player.y) && right) {
+    if (inbounds(player.x + 120, player.y) && right) {
         player.x += 10;
     }
-    if (inbounds(player.x, player.y + 30) && down) {
+    if (inbounds(player.x, player.y + 100) && down) {
         player.y += 10
     }
 }

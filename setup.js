@@ -21,7 +21,7 @@ manifest = [
         id: "gameover"
     },
     {
-        src: "images/instructions.jpg",
+        src: "images/instructions.png",
         id: "instructions"
     },
     {
@@ -69,6 +69,9 @@ manifest = [
         id: "ufo"
     },
     {
+        src: "scripts/duckfootBullet" + jsEnd
+    },
+    {
         src: "scripts/keyboardClicks" + jsEnd
     },
     {
@@ -99,9 +102,6 @@ manifest = [
         src: "scripts/createPlayer" + jsEnd
     },
     {
-        src: "scripts/duckfootBullet" + jsEnd
-    },
-    {
         src: "images/shotNorm.png",
         id: "shotnorm"
     },
@@ -112,6 +112,8 @@ manifest = [
 ];
 
 var queue;
+
+var collisionMethod = ndgmr.checkPixelCollision;
 
 function loadFiles() {
     queue = new createjs.LoadQueue(true, "assets/");
@@ -145,7 +147,7 @@ function loadComplete(evt) {
     setupButtons();
     initCoorText();
     mouseInit();
-    createGameTimer();
+//    createGameTimer();
 }
 
 (function main() {
