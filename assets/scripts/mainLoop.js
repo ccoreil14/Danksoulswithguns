@@ -54,3 +54,9 @@ function runGameTimer() {
     }
 
 }
+
+function isDead(){
+    if(healthSize <= 0){
+        state = 800;
+    }
+}
