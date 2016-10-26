@@ -9,7 +9,7 @@ function loop() {
     runGameTimer();
     updateBullets();
     movePlayer();
-	updateDuckfootBullets();
+    updateDuckfootBullets();
     stage.update();
 }
 createjs.Ticker.addEventListener("tick", loop);
@@ -31,15 +31,15 @@ function resetGameTimer() {
 function runGameTimer() {
     if (looop) {
         frameCount += 1;
-		timeUntilFire -= 1;
+        timeUntilFire -= 1;
     }
 
-	
-	if(timeUntilFire === 0){
-		timeUntilFire = 30;
-		makeDuckfootBullet();
-	}
-	
+
+    if (timeUntilFire === 0) {
+        timeUntilFire = 30;
+        makeDuckfootBullet();
+    }
+
     if (frameCount % (FPS / 10) === 0) {
 
         if (state === 700) {
