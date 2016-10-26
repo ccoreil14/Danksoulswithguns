@@ -15,45 +15,48 @@ function createPlayArea() {
     playScreen.x = playScreen.y = 0;
     playScreen.visible = false;
 
-    
-    createDuckfoot("right");
-    turrets.push(turret);
-
-    createDuckfoot("right");
-    turrets.push(turret);
-
-    createDuckfoot("left");
-    turrets.push(turret);
-
-    createDuckfoot("left");
-    turrets.push(turret);
-
-    createDuckfoot("down");
-    turrets.push(turret);
-
-    createDuckfoot("down");
-    turrets.push(turret);
-
-    createDuckfoot("up");
-    turrets.push(turret);
-
-
-    createDuckfoot("up");
-    turrets.push(turret);
-
+	letThereBeTurrets();
 
 
     score.x = 100;
     score.y = 100;
     stage.addChild(playScreen);
     stage.addChild(score);
-    stage.addChild(powerup);
-
-    for (var i = 0; i < turrets.length; i++) {
-        stage.addChild(turrets[i]);
-    }
     createHealth();
     stage.update();
+}
+
+function letThereBeTurrets(){
+	turrets.length = 0;
+	
+	createDuckfoot("right");
+    turrets.push(turret);
+	//stage.addChild(turret);
+
+    createDuckfoot("right");
+    turrets.push(turret);
+
+    createDuckfoot("left");
+    turrets.push(turret);
+
+    createDuckfoot("left");
+    turrets.push(turret);
+
+    createDuckfoot("down");
+    turrets.push(turret);
+
+    createDuckfoot("down");
+    turrets.push(turret);
+
+    createDuckfoot("up");
+    turrets.push(turret);
+
+    createDuckfoot("up");
+    turrets.push(turret);
+	
+	for(var i = 0; i < turrets.length; i++) {
+        stage.addChild(turrets[i]);
+    }
 }
 
 function createDuckfoot(direction) {

@@ -25,6 +25,10 @@ manifest = [
         id: "instructions"
     },
     {
+        src: "images/powerup.png",
+        id: "powerup"
+    },
+    {
         src: "images/title.jpg",
         id: "title"
     },
@@ -75,10 +79,6 @@ manifest = [
     {
         src: "images/shotNorm.png",
         id: "shotnorm"
-    },
-    {
-        src: "images/powerup.png",
-        id: "powerup"
     },
     {
         src: "scripts/buildVictory" + jsEnd

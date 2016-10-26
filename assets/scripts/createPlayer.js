@@ -32,8 +32,6 @@ function playerShoot(mX, mY) {
     makePlayerBullet(player.x, player.y, mX, mY);
 }
 
-
-
 function checkPlayerCollision() {
     //Iterate through the array of enemy bullets using a for loop
     //for(){

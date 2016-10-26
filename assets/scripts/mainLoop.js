@@ -37,7 +37,10 @@ function runGameTimer() {
 			duckfootBullets[i].visible = false;
 		}
 		duckfootBullets.splice(0, duckfootBullets.length);
-		state = 900;
+		if(state === 700){
+			state = 900;
+		}
+		
 	}
 	
     if (looop) {

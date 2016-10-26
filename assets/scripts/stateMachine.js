@@ -18,6 +18,7 @@ function stateChange() {
         player.visible = false;
         healthBar.visible = false;
         victoryScreen.visible = false;
+        console.log(victoryScreen.visible);
         break;
         //instructions state
     case 200:
@@ -58,9 +59,9 @@ function stateChange() {
         instructionsScreen.visible = false;
         playScreen.visible = true;
         overScreen.visible = false;
+        checkPowerupHit();
         player.visible = true;
         healthBar.visible = true;
-        checkPowerupHit();
         break;
         //game over state
     case 800:
@@ -79,6 +80,7 @@ function stateChange() {
         break;
         //Victory state
     case 900:
+        console.log("here");
         healthSize = 1.0;
         looop = false;
         addFinalScore();
