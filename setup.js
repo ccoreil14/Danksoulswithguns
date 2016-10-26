@@ -156,10 +156,10 @@ function loadComplete(evt) {
     createGameOver();
     createTitle();
     createInstructions();
+    createVictory();
     setupButtons();
     initCoorText();
     mouseInit();
-    createVictory();
     //    createGameTimer();
 }
 

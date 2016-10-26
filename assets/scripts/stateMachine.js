@@ -17,7 +17,7 @@ function stateChange() {
         overScreen.visible = false;
         player.visible = false;
         healthBar.visible = false;
-        //        victoryScreen.visible = false;
+        victoryScreen.visible = false;
         break;
         //instructions state
     case 200:
@@ -30,7 +30,7 @@ function stateChange() {
         instructionsScreen.visible = true;
         playScreen.visible = false;
         overScreen.visible = false;
-        //        victoryScreen.visible = false;
+        victoryScreen.visible = false;
         break;
         //levelSelect state
     case 300:
@@ -75,20 +75,21 @@ function stateChange() {
         instructionsScreen.visible = false;
         playScreen.visible = false;
         overScreen.visible = true;
-        //        victoryScreen.visible = false;
+        victoryScreen.visible = false;
         break;
+        //Victory state
     case 900:
         healthSize = 1.0;
         looop = false;
         addFinalScore();
         instructionsButton.visible = false;
         playButton.visible = false;
-        menuButton.visible = true;
         titleScreen.visible = false;
         instructionsScreen.visible = false;
         playScreen.visible = false;
         overScreen.visible = false;
-        //        victoryScreen.visible = true;
+        victoryScreen.visible = true;
+        menuButton.visible = true;
         break;
     }
 }
