@@ -73,6 +73,10 @@ manifest = [
         id: "ufo"
     },
     {
+        src: "images/shotNorm.png",
+        id: "shotnorm"
+    },
+    {
         src: "scripts/buildVictory" + jsEnd
     },
     {
@@ -110,10 +114,6 @@ manifest = [
     },
     {
         src: "scripts/mainLoop" + jsEnd
-    },
-    {
-        src: "images/shotNorm.png",
-        id: "shotnorm"
     }
 
 ];

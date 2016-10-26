@@ -31,8 +31,8 @@ function makePlayerBullet(playerX, playerY, mX, mY) {
     playerbullet.addX = ((1 - speed) * playerbullet.x + speed * meowX) - playerX;
     playerbullet.addY = ((1 - speed) * playerbullet.y + speed * meowY) - playerY;
 
-    playerbullets.push(playerbullet);
     playerbullet.gotoAndPlay("spin");
+    playerbullets.push(playerbullet);
     stage.addChild(playerbullet);
 }
 
