@@ -76,7 +76,7 @@ function handleKeyUp(evt) {
 
         break;
     case KEYCODE_SPACE:
-
+			
         return false;
     case KEYCODE_A:
         left = false;

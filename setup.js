@@ -94,9 +94,6 @@ manifest = [
         src: "scripts/buttonControls" + jsEnd
     },
     {
-        src: "scripts/mainLoop" + jsEnd
-    },
-    {
         src: "scripts/mouseInfo" + jsEnd
     },
     {
@@ -107,6 +104,9 @@ manifest = [
     },
 	{
         src: "scripts/playerBullet" + jsEnd
+    },
+	{
+        src: "scripts/mainLoop" + jsEnd
     },
     {
         src: "images/shotNorm.png",
