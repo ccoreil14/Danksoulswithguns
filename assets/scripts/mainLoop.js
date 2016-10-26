@@ -7,9 +7,12 @@ var looop = false;
 function loop() {
     stateChange();
     runGameTimer();
+    checkPlayerBulletCollision();
     updateBullets();
     movePlayer();
+    checkDuckfootBulletCollision();
     updateDuckfootBullets();
+    updateHealth();
     stage.update();
 }
 createjs.Ticker.addEventListener("tick", loop);
@@ -32,29 +35,11 @@ function runGameTimer() {
     if (looop) {
         frameCount += 1;
         timeUntilFire -= 1;
-		moveTurrets();
+        moveTurrets();
     }
-
-
     if (timeUntilFire === 0) {
         timeUntilFire = 30;
         makeDuckfootBullet();
-    }
-
-    if (frameCount % (FPS / 10) === 0) {
-        if (state === 700) {
-            for (i = 0; i < duckfootBullets.length; i++) {
-                if (collisionMethod(duckfootBullets[i], player)) {
-                    healthSize -= 0.05;
-                }
-                updateHealth();
-
-                if (healthSize <= 0) {
-                    1
-                    state = 800;
-                }
-            }
-        }
     }
 
 }

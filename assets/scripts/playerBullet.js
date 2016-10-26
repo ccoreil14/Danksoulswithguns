@@ -1,4 +1,5 @@
 var playerbullets = [];
+//You were changing this one
 
 var can = document.getElementById("game");
 
@@ -15,6 +16,8 @@ function makePlayerBullet(playerX, playerY, mX, mY) {
 
     playerbullet.x = playerX;
     playerbullet.y = playerY;
+    playerbullet.scaleY = .3;
+    playerbullet.scaleX = .3;
     var meowX = mX - can.offsetLeft;
     var meowY = mY - can.offsetTop;
 
@@ -34,12 +37,25 @@ function makePlayerBullet(playerX, playerY, mX, mY) {
 }
 
 function updateBullets() {
-    for (i = 0; i < playerbullets.length; i++) {
+    for (var i = 0; i < playerbullets.length; i++) {
         playerbullets[i].x += playerbullets[i].addX;
         playerbullets[i].y += playerbullets[i].addY;
         if (inbounds(playerbullets[i].x, playerbullets[i].y) == false) {
             stage.removeChild(playerbullets[i]);
             playerbullets.splice(i--, 1);
+        }
+    }
+}
+
+function checkPlayerBulletCollision() {
+    for (var i = 0; i < playerbullets.length; i++) {
+        for (var j = 0; j < turrets.length; j++) {
+            if (ndgmr.checkRectCollision(playerbullets[i], turrets[j]) != null) {
+                turrets[j].hitpoints -= 1;
+                stage.removeChild(playerbullets[i]);
+                playerbullets.splice(i--, 1);
+                break;
+            }
         }
     }
 }
