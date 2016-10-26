@@ -29,29 +29,29 @@ function createPlayArea() {
 function letThereBeTurrets(){
 	turrets.length = 0;
 	
-	createDuckfoot("right");
+	createDuckfoot("right", 75, 75);
     turrets.push(turret);
 	//stage.addChild(turret);
 
-    createDuckfoot("right");
+    createDuckfoot("right", 75, 550);
     turrets.push(turret);
 
-    createDuckfoot("left");
+    createDuckfoot("left", 725, 50);
     turrets.push(turret);
 
-    createDuckfoot("left");
+    createDuckfoot("left", 725, 500);
     turrets.push(turret);
 
-    createDuckfoot("down");
+    createDuckfoot("down", 675, 60);
     turrets.push(turret);
 
-    createDuckfoot("down");
+    createDuckfoot("down", 100, 60);
     turrets.push(turret);
 
-    createDuckfoot("up");
+    createDuckfoot("up", 120, 540);
     turrets.push(turret);
 
-    createDuckfoot("up");
+    createDuckfoot("up", 700, 540);
     turrets.push(turret);
 	
 	for(var i = 0; i < turrets.length; i++) {
@@ -59,28 +59,16 @@ function letThereBeTurrets(){
     }
 }
 
-function createDuckfoot(direction) {
+function createDuckfoot(direction, x, y) {
     turret = new createjs.Bitmap(queue.getResult("duckfoot"));
     turret.regX = turret.regY = 50;
     turret.hitpoints = 3;
     turret.getImage = function () {
         return this;
     }
-    if (direction === "right") {
-        turret.x = 75;
-        turret.y = 300;
-    } else if (direction === "down") {
-        turret.x = 400;
-        turret.y = 50;
-    } else if (direction === "left") {
-        turret.x = 725;
-        turret.y = 300;
-    } else if (direction === "up") {
-        turret.x = 400;
-        turret.y = 550;
-    }
-
-
+        turret.x = x;
+        turret.y = y;
+   
     if (direction === "right") {
         turret.rotation = 0;
     } else if (direction === "down") {
@@ -104,10 +92,10 @@ function moveTurrets() {
             }
 
             if (leftMovementUp) {
-                turrets[i].y -= 5;
+                //turrets[i].y -= 5;
                 leftMovementUp = false;
             } else {
-                turrets[i].y += 5;
+                //turrets[i].y += 5;
                 leftMovementUp = true;
             }
 
@@ -120,10 +108,10 @@ function moveTurrets() {
             }
 
             if (upMovementLeft) {
-                turrets[i].x -= 5;
+                //turrets[i].x -= 5;
                 upMovementLeft = false;
             } else {
-                turrets[i].x += 5;
+                //turrets[i].x += 5;
                 upMovementLeft = true;
             }
 
@@ -136,10 +124,10 @@ function moveTurrets() {
             }
 
             if (rightMovementUp) {
-                turrets[i].y -= 5;
+                //turrets[i].y -= 5;
                 rightMovementUp = false;
             } else {
-                turrets[i].y += 5;
+                //turrets[i].y += 5;
                 rightMovementUp = true;
             }
 
@@ -152,10 +140,10 @@ function moveTurrets() {
             }
 
             if (downMovementLeft) {
-                turrets[i].x -= 5;
+                //turrets[i].x -= 5;
                 downMovementLeft = false;
             } else {
-                turrets[i].x += 5;
+                //turrets[i].x += 5;
                 downMovementLeft = true;
             }
 
