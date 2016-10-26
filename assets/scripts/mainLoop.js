@@ -36,6 +36,9 @@ function runGameTimer() {
         for (i = 0; i < duckfootBullets.length; i++) {
             stage.removeChild(duckfootBullets[i]);
         }
+		for (i = 0; i < playerbullets.length; i++) {
+            stage.removeChild(playerbullets[i]);
+        }
         if (state === 700) {
             state = 900;
         }
@@ -59,8 +62,8 @@ function isDead() {
 		for (i = 0; i < playerbullets.length; i++) {
             stage.removeChild(playerbullets[i]);
         }
-		for (i = 0; i < playerbullets.length; i++) {
-            stage.removeChild(playerbullets[i]);
+		for (i = 0; i < duckfootBullets.length; i++) {
+            stage.removeChild(duckfootBullets[i]);
         }
 		for(i = 0; i < turrets.length; i++){
 			stage.removeChild(turrets[i]);
