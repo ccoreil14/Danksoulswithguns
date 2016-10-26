@@ -30,6 +30,7 @@ function stateChange() {
         instructionsScreen.visible = true;
         playScreen.visible = false;
         overScreen.visible = false;
+			victoryScreen.visible = false;
 			break;
 		//levelSelect state
 		case 300:
@@ -59,6 +60,7 @@ function stateChange() {
         overScreen.visible = false;
         player.visible = true;
         healthBar.visible = true;
+			victoryScreen.visible = false;
         break;
 		//game over state
 		case 800:
@@ -73,6 +75,7 @@ function stateChange() {
         instructionsScreen.visible = false;
         playScreen.visible = false;
         overScreen.visible = true;
+			victoryScreen.visible = false;
         break;
 		case 900:
 			healthSize = 1.0;

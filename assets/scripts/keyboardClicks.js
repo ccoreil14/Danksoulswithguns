@@ -40,7 +40,7 @@ function handleKeyDown(evt) {
 
         return false;
     case KEYCODE_SPACE:
-			state = 900;
+			
         return false;
         //Below the + or - 30 represents where we want the players bounds to be
     case KEYCODE_A:
@@ -76,7 +76,6 @@ function handleKeyUp(evt) {
 
         break;
     case KEYCODE_SPACE:
-			
         return false;
     case KEYCODE_A:
         left = false;
