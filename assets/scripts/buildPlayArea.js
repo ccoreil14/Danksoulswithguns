@@ -5,10 +5,10 @@ var healthColor = "#0D0";
 var healthSize = 1.0;
 var graphics = new createjs.Graphics();
 var turret;
-var leftMovementUp = true;
-var rightMovementUp = true;
-var downMovementLeft = true;
-var upMovementLeft = true;
+//var leftMovementUp = true;
+//var rightMovementUp = true;
+//var downMovementLeft = true;
+//var upMovementLeft = true;
 
 function createPlayArea() {
     playScreen = new createjs.Bitmap(queue.getResult("levelOne"));
@@ -29,29 +29,29 @@ function createPlayArea() {
 function letThereBeTurrets() {
     turrets.length = 0;
 
-    createDuckfoot("right");
+    createDuckfoot("right", 75, 75);
     turrets.push(turret);
     //stage.addChild(turret);
 
-    createDuckfoot("right");
+    createDuckfoot("right", 75, 550);
     turrets.push(turret);
 
-    createDuckfoot("left");
+    createDuckfoot("left", 725, 50);
     turrets.push(turret);
 
-    createDuckfoot("left");
+    createDuckfoot("left", 725, 500);
     turrets.push(turret);
 
-    createDuckfoot("down");
+    createDuckfoot("down", 675, 60);
     turrets.push(turret);
 
-    createDuckfoot("down");
+    createDuckfoot("down", 100, 60);
     turrets.push(turret);
 
-    createDuckfoot("up");
+    createDuckfoot("up", 120, 540);
     turrets.push(turret);
 
-    createDuckfoot("up");
+    createDuckfoot("up", 700, 540);
     turrets.push(turret);
 
     for (var i = 0; i < turrets.length; i++) {
@@ -59,7 +59,7 @@ function letThereBeTurrets() {
     }
 }
 
-function createDuckfoot(direction) {
+function createDuckfoot(direction, x, y) {
     turret = new createjs.Bitmap(queue.getResult("duckfoot"));
     turret.regX = turret.regY = 50;
     turret.hitpoints = 3;
@@ -67,21 +67,17 @@ function createDuckfoot(direction) {
     turret.getImage = function () {
         return this;
     }
+
+    turret.x = x;
+    turret.y = y;
+
     if (direction === "right") {
-        turret.x = 75;
-        turret.y = 300;
         turret.rotation = 0;
     } else if (direction === "down") {
-        turret.x = 400;
-        turret.y = 50;
         turret.rotation = 90;
     } else if (direction === "left") {
-        turret.x = 725;
-        turret.y = 300;
         turret.rotation = 180;
     } else if (direction === "up") {
-        turret.x = 400;
-        turret.y = 550;
         turret.rotation = 270;
     }
 }
@@ -90,54 +86,54 @@ function moveTurretBetter() {
     for (var i = 0; i < turrets.length; i++) {
         //y pos
         if (turrets[i].rotation === 0) {
-            if (inbounds(turret[i].x, turret[i].y + 5) == false) {
-                turret[i].moveRight = false;
-            } else if (inbounds(turret[i].x, turret[i].y - 5) == false) {
-                turret[i].moveRight = true;
+            if (inbounds(turrets[i].x, turrets[i].y + 5) == false) {
+                turrets[i].moveRight = false;
+            } else if (inbounds(turrets[i].x, turrets[i].y - 5) == false) {
+                turrets[i].moveRight = true;
             }
-            if (turret[i].moveRight) {
-                turret[i].y += 5;
+            if (turrets[i].moveRight) {
+                turrets[i].y += 5;
             } else {
-                turret[i].y -= 5;
+                turrets[i].y -= 5;
             }
         }
         //x pos
         if (turrets[i].rotation === 90) {
-            if (inbounds(turret[i].x + 5, turret[i].y) == false) {
-                turret[i].moveRight = false;
-            } else if (inbounds(turret[i].x - 5, turret[i].y) == false) {
-                turret[i].moveRight = true;
+            if (inbounds(turrets[i].x + 5, turrets[i].y) == false) {
+                turrets[i].moveRight = false;
+            } else if (inbounds(turrets[i].x - 5, turrets[i].y) == false) {
+                turrets[i].moveRight = true;
             }
-            if (turret[i].moveRight) {
-                turret[i].x += 5;
+            if (turrets[i].moveRight) {
+                turrets[i].x += 5;
             } else {
-                turret[i].x -= 5;
+                turrets[i].x -= 5;
             }
         }
         //y pos
         if (turrets[i].rotation === 180) {
-            if (inbounds(turret[i].x, turret[i].y - 5) == false) {
-                turret[i].moveRight = false;
-            } else if (inbounds(turret[i].x, turret[i].y + 5) == false) {
-                turret[i].moveRight = true;
+            if (inbounds(turrets[i].x, turrets[i].y - 5) == false) {
+                turrets[i].moveRight = false;
+            } else if (inbounds(turrets[i].x, turrets[i].y + 5) == false) {
+                turrets[i].moveRight = true;
             }
-            if (turret[i].moveRight) {
-                turret[i].y -= 5;
+            if (turrets[i].moveRight) {
+                turrets[i].y -= 5;
             } else {
-                turret[i].y += 5;
+                turrets[i].y += 5;
             }
         }
         //x pos
         if (turrets[i].rotation === 270) {
-            if (inbounds(turret[i].x - 5, turret[i].y) == false) {
-                turret[i].moveRight = false;
-            } else if (inbounds(turret[i].x + 5, turret[i].y) == false) {
-                turret[i].moveRight = true;
+            if (inbounds(turrets[i].x - 5, turrets[i].y) == false) {
+                turrets[i].moveRight = false;
+            } else if (inbounds(turrets[i].x + 5, turrets[i].y) == false) {
+                turrets[i].moveRight = true;
             }
-            if (turret[i].moveRight) {
-                turret[i].x -= 5;
+            if (turrets[i].moveRight) {
+                turrets[i].x -= 5;
             } else {
-                turret[i].x += 5;
+                turrets[i].x += 5;
             }
         }
         if (turrets[i].hitpoints === 0) {
@@ -145,88 +141,89 @@ function moveTurretBetter() {
             turrets.splice(i--, 1);
         }
     }
+}
 
-    function moveTurrets() {
-        for (var i = 0; i < turrets.length; i++) {
-            if (turrets[i].rotation === 0) {
-                if (turrets[i].y === 50) {
-                    leftMovementUp = false;
-                }
-                if (turrets[i].y === 600) {
-                    leftMovementUp = true;
-                }
-
-                if (leftMovementUp) {
-                    turrets[i].y -= 5;
-                    leftMovementUp = false;
-                } else {
-                    turrets[i].y += 5;
-                    leftMovementUp = true;
-                }
-
-            } else if (turrets[i].rotation === 90) {
-                if (turrets[i].x === 25) {
-                    upMovementLeft = false;
-                }
-                if (turrets[i].x === 720) {
-                    upMovementLeft = true;
-                }
-
-                if (upMovementLeft) {
-                    turrets[i].x -= 5;
-                    upMovementLeft = false;
-                } else {
-                    turrets[i].x += 5;
-                    upMovementLeft = true;
-                }
-
-            } else if (turrets[i].rotation === 180) {
-                if (turrets[i].y === 50) {
-                    rightMovementUp = false;
-                }
-                if (turrets[i].y === 600) {
-                    rightMovementUp = true;
-                }
-
-                if (rightMovementUp) {
-                    turrets[i].y -= 5;
-                    rightMovementUp = false;
-                } else {
-                    turrets[i].y += 5;
-                    rightMovementUp = true;
-                }
-
-            } else if (turrets[i].rotation === 270) {
-                if (turrets[i].x === 25) {
-                    downMovementLeft = false;
-                }
-                if (turrets[i].x === 720) {
-                    downMovementLeft = true;
-                }
-
-                if (downMovementLeft) {
-                    turrets[i].x -= 5;
-                    downMovementLeft = false;
-                } else {
-                    turrets[i].x += 5;
-                    downMovementLeft = true;
-                }
-
+function moveTurrets() {
+    for (var i = 0; i < turrets.length; i++) {
+        if (turrets[i].rotation === 0) {
+            if (turrets[i].y === 50) {
+                leftMovementUp = false;
             }
-            if (turrets[i].hitpoints === 0) {
-                stage.removeChild(turrets[i]);
-                turrets.splice(i--, 1);
+            if (turrets[i].y === 600) {
+                leftMovementUp = true;
             }
+
+            if (leftMovementUp) {
+                turrets[i].y -= 5;
+                leftMovementUp = false;
+            } else {
+                turrets[i].y += 5;
+                leftMovementUp = true;
+            }
+
+        } else if (turrets[i].rotation === 90) {
+            if (turrets[i].x === 25) {
+                upMovementLeft = false;
+            }
+            if (turrets[i].x === 720) {
+                upMovementLeft = true;
+            }
+
+            if (upMovementLeft) {
+                turrets[i].x -= 5;
+                upMovementLeft = false;
+            } else {
+                turrets[i].x += 5;
+                upMovementLeft = true;
+            }
+
+        } else if (turrets[i].rotation === 180) {
+            if (turrets[i].y === 50) {
+                rightMovementUp = false;
+            }
+            if (turrets[i].y === 600) {
+                rightMovementUp = true;
+            }
+
+            if (rightMovementUp) {
+                turrets[i].y -= 5;
+                rightMovementUp = false;
+            } else {
+                turrets[i].y += 5;
+                rightMovementUp = true;
+            }
+
+        } else if (turrets[i].rotation === 270) {
+            if (turrets[i].x === 25) {
+                downMovementLeft = false;
+            }
+            if (turrets[i].x === 720) {
+                downMovementLeft = true;
+            }
+
+            if (downMovementLeft) {
+                turrets[i].x -= 5;
+                downMovementLeft = false;
+            } else {
+                turrets[i].x += 5;
+                downMovementLeft = true;
+            }
+
+        }
+        if (turrets[i].hitpoints === 0) {
+            stage.removeChild(turrets[i]);
+            turrets.splice(i--, 1);
         }
     }
+}
 
-    function createHealth() {
-        graphics.beginFill(healthColor).drawRect(10, 2, 20, 100);
-        healthBar = new createjs.Shape(graphics);
-        stage.addChild(healthBar);
-        stage.update();
-    }
+function createHealth() {
+    graphics.beginFill(healthColor).drawRect(10, 2, 20, 100);
+    healthBar = new createjs.Shape(graphics);
+    stage.addChild(healthBar);
+    stage.update();
+}
 
-    function updateHealth() {
-        healthBar.scaleY = healthSize;
-    }
+function updateHealth() {
+    healthBar.scaleY = healthSize;
+}
