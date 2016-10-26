@@ -12,6 +12,15 @@ var right = false;
 var left = false;
 var up = false;
 var down = false;
+//var mouseX, mouseY;
+//
+//function mouseInit() {
+//    stage.on("click", function (evt) {
+//        mouseX = Math.floor(evt.stageX);
+//        mouseY = Math.floor(evt.stageY);
+//        console.log(mouseX + " hereda Y " + mouseY);
+//    });
+//}
 
 function handleKeyDown(evt) {
     if (!evt) {
@@ -31,7 +40,7 @@ function handleKeyDown(evt) {
 
         return false;
     case KEYCODE_SPACE:
-
+			
         return false;
         //Below the + or - 30 represents where we want the players bounds to be
     case KEYCODE_A:
@@ -67,7 +76,6 @@ function handleKeyUp(evt) {
 
         break;
     case KEYCODE_SPACE:
-
         return false;
     case KEYCODE_A:
         left = false;

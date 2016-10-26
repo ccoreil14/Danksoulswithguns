@@ -32,6 +32,14 @@ function resetGameTimer() {
 }
 
 function runGameTimer() {
+	if(turrets.length === 0){
+		for (i = 0; i < duckfootBullets.length; i++) {
+			duckfootBullets[i].visible = false;
+		}
+		duckfootBullets.splice(0, duckfootBullets.length);
+		state = 900;
+	}
+	
     if (looop) {
         frameCount += 1;
         timeUntilFire -= 1;
