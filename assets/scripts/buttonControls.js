@@ -23,6 +23,7 @@ function setupButtons() {
         state = 100;
     });
     playButton.on("click", function (evt) {
+		letThereBeTurrets();
         player.x = 400;
         player.y = 380;
         state = 700;
