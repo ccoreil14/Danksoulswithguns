@@ -28,19 +28,6 @@ function makePlayerBullet(playerX, playerY, mX, mY) {
     playerbullet.addX = ((1 - speed) * playerbullet.x + speed * meowX) - playerX;
     playerbullet.addY = ((1 - speed) * playerbullet.y + speed * meowY) - playerY;
 
-    console.log("MouseX: " + mX);
-    console.log("MouseY: " + mY);
-    console.log("offsetTop: " + can.offsetTop);
-    console.log("offsetLeft: " + can.offsetLeft);
-    console.log("meowX: " + meowX);
-    console.log("meowY: " + meowY);
-    console.log("deltaX: " + deltaX);
-    console.log("deltaY: " + deltaY);
-    console.log("hyp: " + hyp);
-    console.log("Speed: " + speed);
-    console.log(playerbullet.addX);
-    console.log(playerbullet.addY);
-
     playerbullets.push(playerbullet);
     playerbullet.gotoAndPlay("spin");
     stage.addChild(playerbullet);
@@ -50,8 +37,6 @@ function updateBullets() {
     for (i = 0; i < playerbullets.length; i++) {
         playerbullets[i].x += playerbullets[i].addX;
         playerbullets[i].y += playerbullets[i].addY;
-        //        playerbullets[i].x += 10;
-        //        playerbullets[i].y += 0;
         if (inbounds(playerbullets[i].x, playerbullets[i].y) == false) {
             stage.removeChild(playerbullets[i]);
             playerbullets.splice(i--, 1);
