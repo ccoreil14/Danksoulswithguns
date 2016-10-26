@@ -77,6 +77,10 @@ manifest = [
         id: "shotnorm"
     },
     {
+        src: "images/powerup.png",
+        id: "powerup"
+    },
+    {
         src: "scripts/buildVictory" + jsEnd
     },
     {
@@ -111,6 +115,9 @@ manifest = [
     },
     {
         src: "scripts/playerBullet" + jsEnd
+    },
+    {
+        src: "scripts/buildPowerup" + jsEnd
     },
     {
         src: "scripts/mainLoop" + jsEnd

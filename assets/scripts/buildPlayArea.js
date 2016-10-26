@@ -15,6 +15,7 @@ function createPlayArea() {
     playScreen.x = playScreen.y = 0;
     playScreen.visible = false;
 
+    
     createDuckfoot("right");
     turrets.push(turret);
 
@@ -46,6 +47,7 @@ function createPlayArea() {
     score.y = 100;
     stage.addChild(playScreen);
     stage.addChild(score);
+    stage.addChild(powerup);
 
     for (var i = 0; i < turrets.length; i++) {
         stage.addChild(turrets[i]);

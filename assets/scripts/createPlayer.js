@@ -20,6 +20,7 @@ function createPlayer() {
     player.y = 380;
     player.scaleX = 0.2;
     player.scaleY = 0.2;
+    player.tooStrong = false;
 
     player.gotoAndPlay("rotate");
     stage.addChild(player);
@@ -30,6 +31,8 @@ function createPlayer() {
 function playerShoot(mX, mY) {
     makePlayerBullet(player.x, player.y, mX, mY);
 }
+
+
 
 function checkPlayerCollision() {
     //Iterate through the array of enemy bullets using a for loop

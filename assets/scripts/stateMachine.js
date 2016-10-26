@@ -60,6 +60,7 @@ function stateChange() {
         overScreen.visible = false;
         player.visible = true;
         healthBar.visible = true;
+        checkPowerupHit();
         break;
         //game over state
     case 800:

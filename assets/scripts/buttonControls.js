@@ -25,6 +25,7 @@ function setupButtons() {
     playButton.on("click", function (evt) {
         player.x = 400;
         player.y = 380;
+        createPowerup();
         state = 700;
         displaySprites();
 
