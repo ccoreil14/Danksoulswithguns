@@ -1,0 +1,36 @@
+Testing notes
+Funky
+-shoots not going in correct direction (because it was centered)
+Daniel
+-instructions need to be more specific
+-not shooting from center of player
+-enemies not hurt player on touch
+-didn't know know that power up was power up
+Rachel
+-started really quick
+-power up no working (only invincible in spot of power up and no where else )
+-should spawn in 
+Tim
+-instructions should show off what to do better. Didn't know how to shoot(only one)
+-top left corner is pretty much a win
+-prevent player from hitting enemies 
+Brennan
+-bullets brighter
+Kurminer
+-can't hold to shoot intend of click
+-think about adding gun power ups
+-health ups
+Chloe
+-hates mouse. Mouse keys alternate
+-continue button on game over
+-power up looks liked level
+-remove mouse coordinates 
+Jason
+-as time goes more things to dodge
+-bullets brighter
+-health should be more noticeable 
+-power up should move
+-target for a cursor
+Thomas
+-visible bullets
+-multiple power ups
