@@ -7,10 +7,16 @@ function createPowerup() {
     stage.addChild(powerup);
 }
 
+
+
+function deletePowerup() {
+    stage.removeChild(powerup);
+}
+
 function checkPowerupHit() {
     if (ndgmr.checkRectCollision(powerup, player)) {
         player.tooStrong = true;
-        stage.removeChild(powerup);
+        deletePowerup();
         setInterval(function () {
             player.tooStrong = false;
         }, 5000);
