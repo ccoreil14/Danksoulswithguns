@@ -67,7 +67,6 @@ function isDead() {
         }
 		for(i = 0; i < turrets.length; i++){
 			stage.removeChild(turrets[i]);
-			console.log("its lying");
 		}
         state = 800;
     }
