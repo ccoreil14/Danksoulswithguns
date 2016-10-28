@@ -40,6 +40,7 @@ function runGameTimer() {
             stage.removeChild(playerbullets[i]);
         }
         if (state === 700) {
+			deletePowerup();
             state = 900;
         }
 
@@ -68,6 +69,7 @@ function isDead() {
 		for(i = 0; i < turrets.length; i++){
 			stage.removeChild(turrets[i]);
 		}
+		deletePowerup();
         state = 800;
     }
 }
