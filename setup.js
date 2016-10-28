@@ -136,9 +136,9 @@ function loadFiles() {
     queue.loadManifest(manifest);
 }
 
-var blocks, blockArray;
 
-blockArray = [];
+
+
 
 function displaySprites() {
 
