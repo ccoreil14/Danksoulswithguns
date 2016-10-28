@@ -121,6 +121,9 @@ manifest = [
     },
     {
         src: "scripts/mainLoop" + jsEnd
+    },
+    {
+        src: "scripts/duckfootTurret" + jsEnd
     }
 
 ];
