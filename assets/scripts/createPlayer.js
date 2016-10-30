@@ -21,7 +21,6 @@ function createPlayer() {
     player.scaleX = 0.15;
     player.scaleY = 0.15;
     player.tooStrong = false;
-
     player.gotoAndPlay("rotate");
     stage.addChild(player);
 
@@ -42,9 +41,9 @@ function checkPlayerCollision() {
 
 //This will return false if whatever x or y you pass in is out of bounds
 function inbounds(x, y) {
-    if (x > 800 || x < 0) {
+    if (x > 790 || x < 20) {
         return false;
-    } else if (y > 600 || y < 0) {
+    } else if (y > 590 || y < 30) {
         return false;
     } else {
         return true;
