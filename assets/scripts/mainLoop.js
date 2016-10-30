@@ -13,6 +13,7 @@ function loop() {
     checkDuckfootBulletCollision();
     updateDuckfootBullets();
     updateHealth();
+    playerShotDelay();
     stage.update();
 }
 createjs.Ticker.addEventListener("tick", loop);
@@ -36,7 +37,7 @@ function runGameTimer() {
         for (i = 0; i < duckfootBullets.length; i++) {
             stage.removeChild(duckfootBullets[i]);
         }
-		for (i = 0; i < playerbullets.length; i++) {
+        for (i = 0; i < playerbullets.length; i++) {
             stage.removeChild(playerbullets[i]);
         }
         if (state === 700) {
@@ -59,16 +60,16 @@ function runGameTimer() {
 
 function isDead() {
     if (healthSize <= 0) {
-		for (i = 0; i < playerbullets.length; i++) {
+        for (i = 0; i < playerbullets.length; i++) {
             stage.removeChild(playerbullets[i]);
         }
-		for (i = 0; i < duckfootBullets.length; i++) {
+        for (i = 0; i < duckfootBullets.length; i++) {
             stage.removeChild(duckfootBullets[i]);
         }
-		for(i = 0; i < turrets.length; i++){
-			stage.removeChild(turrets[i]);
-		}
-		movePowerup();
+        for (i = 0; i < turrets.length; i++) {
+            stage.removeChild(turrets[i]);
+        }
+        movePowerup();
         state = 800;
     }
 }
