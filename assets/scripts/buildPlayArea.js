@@ -41,16 +41,16 @@ function letThereBeTurrets() {
     createDuckfoot("left", 725, 500);
     turrets.push(turret);
 
-    createDuckfoot("down", 675, 60);
+    createDuckfoot("down", 675, 55);
     turrets.push(turret);
 
-    createDuckfoot("down", 100, 60);
+    createDuckfoot("down", 100, 55);
     turrets.push(turret);
 
-    createDuckfoot("up", 120, 540);
+    createDuckfoot("up", 120, 545);
     turrets.push(turret);
 
-    createDuckfoot("up", 700, 540);
+    createDuckfoot("up", 700, 545);
     turrets.push(turret);
 
     for (var i = 0; i < turrets.length; i++) {

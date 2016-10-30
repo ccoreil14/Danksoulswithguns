@@ -1,6 +1,7 @@
 function createDuckfoot(direction, x, y) {
     turret = new createjs.Bitmap(queue.getResult("duckfoot"));
     turret.regX = turret.regY = 50;
+	turret.scaleX = turret.scaleY = .7;
     turret.hitpoints = 3;
     turret.moveRight = true;
     turret.getImage = function () {
@@ -25,7 +26,7 @@ function moveTurretBetter() {
     for (var i = 0; i < turrets.length; i++) {
         //y pos
         if (turrets[i].rotation === 0) {
-            if (inbounds(turrets[i].x, turrets[i].y + 50) == false) {
+            if (inbounds(turrets[i].x, turrets[i].y + 30) == false) {
                 turrets[i].moveRight = false;
             } else if (inbounds(turrets[i].x, turrets[i].y - 50) == false) {
                 turrets[i].moveRight = true;
@@ -38,7 +39,7 @@ function moveTurretBetter() {
         }
         //x pos
         if (turrets[i].rotation === 90) {
-            if (inbounds(turrets[i].x + 50, turrets[i].y) == false) {
+            if (inbounds(turrets[i].x + 70, turrets[i].y) == false) {
                 turrets[i].moveRight = false;
             } else if (inbounds(turrets[i].x - 50, turrets[i].y) == false) {
                 turrets[i].moveRight = true;
@@ -51,7 +52,7 @@ function moveTurretBetter() {
         }
         //y pos
         if (turrets[i].rotation === 180) {
-            if (inbounds(turrets[i].x, turrets[i].y - 50) == false) {
+            if (inbounds(turrets[i].x, turrets[i].y - 30) == false) {
                 turrets[i].moveRight = false;
             } else if (inbounds(turrets[i].x, turrets[i].y + 50) == false) {
                 turrets[i].moveRight = true;
@@ -64,7 +65,7 @@ function moveTurretBetter() {
         }
         //x pos
         if (turrets[i].rotation === 270) {
-            if (inbounds(turrets[i].x - 50, turrets[i].y) == false) {
+            if (inbounds(turrets[i].x - 70, turrets[i].y) == false) {
                 turrets[i].moveRight = false;
             } else if (inbounds(turrets[i].x + 50, turrets[i].y) == false) {
                 turrets[i].moveRight = true;

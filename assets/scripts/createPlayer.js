@@ -18,8 +18,8 @@ function createPlayer() {
     player = new createjs.Sprite(characterSheet);
     player.x = 400;
     player.y = 380;
-    player.scaleX = 0.2;
-    player.scaleY = 0.2;
+    player.scaleX = 0.15;
+    player.scaleY = 0.15;
     player.tooStrong = false;
 
     player.gotoAndPlay("rotate");

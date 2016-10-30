@@ -65,6 +65,8 @@ function stateChange() {
         break;
         //game over state
     case 800:
+        movePowerup();
+        powerTime = 0;
         healthSize = 1.0;
         looop = false;
         addFinalScore();
@@ -80,6 +82,8 @@ function stateChange() {
         break;
         //Victory state
     case 900:
+        movePowerup();
+        powerTime = 0;
         healthSize = 1.0;
         looop = false;
         addFinalScore();

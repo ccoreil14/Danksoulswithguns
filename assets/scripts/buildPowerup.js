@@ -2,23 +2,33 @@ var powerup;
 
 function createPowerup() {
     powerup = new createjs.Bitmap(queue.getResult("powerup"));
-    powerup.x = powerup.y = 100;
+    movePowerupBack();
     powerup.scaleX = powerup.scaleY = 0.3;
     stage.addChild(powerup);
 }
 
 
 
-function deletePowerup() {
-    stage.removeChild(powerup);
+function movePowerup() {
+    powerup.y = powerup.x = -100;
 }
 
+function movePowerupBack() {
+    powerup.y = powerup.x = 100;
+}
+
+var powerTime = 0;
+
 function checkPowerupHit() {
+    powerTime--;
     if (ndgmr.checkRectCollision(powerup, player)) {
+//        console.log("PowerUP!");
         player.tooStrong = true;
-        deletePowerup();
-        setInterval(function () {
-            player.tooStrong = false;
-        }, 5000);
+        powerTime = (FPS * 5);
+        movePowerup();
+    }
+
+    if (powerTime <= 0) {
+        player.tooStrong = false;
     }
 }
