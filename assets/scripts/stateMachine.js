@@ -65,6 +65,7 @@ function stateChange() {
         break;
         //game over state
     case 800:
+        shoot = false;
         movePowerup();
         powerTime = 0;
         healthSize = 1.0;
@@ -82,6 +83,7 @@ function stateChange() {
         break;
         //Victory state
     case 900:
+        shoot = false;
         movePowerup();
         powerTime = 0;
         healthSize = 1.0;

@@ -81,6 +81,10 @@ manifest = [
         id: "shotnorm"
     },
     {
+        src: "images/shotRainbow.png",
+        id: "shotrainbow"
+    },
+    {
         src: "scripts/buildVictory" + jsEnd
     },
     {
