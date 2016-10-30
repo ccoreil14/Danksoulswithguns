@@ -22,11 +22,17 @@ function setupButtons() {
     menuButton.on("click", function (evt) {
         state = 100;
     });
+    var firstTime = true;
     playButton.on("click", function (evt) {
         letThereBeTurrets();
         player.x = 400;
         player.y = 380;
-        createPowerup();
+        if (firstTime === true) {
+            createPowerup();
+            firstTime = false;
+        } else {
+            movePowerupBack();
+        }
         state = 700;
         displaySprites();
 
