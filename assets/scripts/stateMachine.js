@@ -79,7 +79,6 @@ function stateChange() {
         playScreen.visible = false;
         overScreen.visible = true;
         victoryScreen.visible = false;
-
         break;
         //Victory state
     case 900:
