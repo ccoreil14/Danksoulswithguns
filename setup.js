@@ -25,7 +25,7 @@ manifest = [
         id: "instructions"
     },
     {
-        src: "images/powerup.png",
+        src: "images/powerup2B.png",
         id: "powerup"
     },
     {
