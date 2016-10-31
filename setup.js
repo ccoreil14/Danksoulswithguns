@@ -53,6 +53,22 @@ manifest = [
         id: "duckfootBullet"
     },
     {
+        src: "images/basicTurret.png",
+        id: "basic"
+    },
+    {
+        src: "images/lazerTurret.png",
+        id: "lazer"
+    },
+    {
+        src: "images/basicBullet.png",
+        id: "basicBullet"
+    },
+    {
+        src: "images/lazerBullet.png",
+        id: "lazerBullet"
+    },
+    {
         src: "images/moon.png",
         id: "playarea"
     },
@@ -89,6 +105,12 @@ manifest = [
     },
     {
         src: "scripts/duckfootBullet" + jsEnd
+    },
+	{
+        src: "scripts/basicBullet" + jsEnd
+    },
+	{
+        src: "scripts/lazerBullet" + jsEnd
     },
     {
         src: "scripts/keyboardClicks" + jsEnd
@@ -128,6 +150,12 @@ manifest = [
     },
     {
         src: "scripts/duckfootTurret" + jsEnd
+    },
+    {
+        src: "scripts/basicTurret" + jsEnd
+    },
+    {
+        src: "scripts/lazerTurret" + jsEnd
     }
 
 ];
