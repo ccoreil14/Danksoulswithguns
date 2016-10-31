@@ -135,7 +135,8 @@ function updateDuckfootBullets() {
 
 function checkDuckfootBulletCollision() {
     for (var i = 0; i < duckfootBullets.length; i++) {
-        if (ndgmr.checkRectCollision(duckfootBullets[i], player) != null && player.tooStrong === false) {
+        if (ndgmr.checkRectCollision(duckfootBullets[i], player) != null && player.tooStrong == false) {
+            player.gotHit = true;
             healthSize -= .1;
             stage.removeChild(duckfootBullets[i]);
             duckfootBullets.splice(i--, 1);

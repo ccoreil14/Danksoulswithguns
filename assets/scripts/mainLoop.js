@@ -18,6 +18,7 @@ function loop() {
 	updateLazerBullets();
     updateHealth();
     playerShotDelay();
+    PlayerIFrames();
     stage.update();
 }
 createjs.Ticker.addEventListener("tick", loop);
