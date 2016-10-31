@@ -14,6 +14,7 @@ function loop() {
     updateDuckfootBullets();
     updateHealth();
     playerShotDelay();
+    PlayerIFrames();
     stage.update();
 }
 createjs.Ticker.addEventListener("tick", loop);

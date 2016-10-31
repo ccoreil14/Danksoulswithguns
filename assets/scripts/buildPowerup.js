@@ -1,4 +1,5 @@
 var powerup;
+var powerupHit = false;;
 
 function createPowerup() {
     powerup = new createjs.Bitmap(queue.getResult("powerup"));
@@ -22,13 +23,14 @@ var powerTime = 0;
 function checkPowerupHit() {
     powerTime--;
     if (ndgmr.checkRectCollision(powerup, player)) {
-//        console.log("PowerUP!");
+        powerupHit = true;
         player.tooStrong = true;
         powerTime = (FPS * 5);
         movePowerup();
     }
 
-    if (powerTime <= 0) {
+    if (powerTime <= 0 && powerupHit == true) {
+        powerupHit = false;
         player.tooStrong = false;
     }
 }

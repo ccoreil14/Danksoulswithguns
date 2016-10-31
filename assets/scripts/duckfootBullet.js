@@ -5,10 +5,10 @@ var duckfootBulletSpeed = 15;
 function makeDuckfootBullet() {
     for (var i = 0; i < turrets.length; i++) {
         duckfootBullet = new createjs.Bitmap(queue.getResult("duckfootBullet"));
-		duckfootBullet.scaleX = duckfootBullet.scaleY = .7;
+        duckfootBullet.scaleX = duckfootBullet.scaleY = .7;
         if (turrets[i].rotation === 0) {
             duckfootBullet.x = turrets[i].x + 10;
-            duckfootBullet.y = turrets[i].y - 25;			
+            duckfootBullet.y = turrets[i].y - 25;
             duckfootBullet.rotation = 0;
         } else if (turrets[i].rotation === 90) {
             duckfootBullet.x = turrets[i].x + 25;
@@ -57,7 +57,8 @@ function updateDuckfootBullets() {
 
 function checkDuckfootBulletCollision() {
     for (var i = 0; i < duckfootBullets.length; i++) {
-        if (ndgmr.checkRectCollision(duckfootBullets[i], player) != null && player.tooStrong === false) {
+        if (ndgmr.checkRectCollision(duckfootBullets[i], player) != null && player.tooStrong == false) {
+            player.gotHit = true;
             healthSize -= .1;
             stage.removeChild(duckfootBullets[i]);
             duckfootBullets.splice(i--, 1);
