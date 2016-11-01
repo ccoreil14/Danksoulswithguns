@@ -70,6 +70,18 @@ function runGameTimer() {
 		makeBasicBullet();
 		makeLazerBullet();
     }
+	
+	if(timeUntilFire === 27){
+		for(var i = 0; i < bTurrets.length; i++){
+			bTurrets[i].image = queue.getResult("basic");
+		}
+		for(var i = 0; i < dTurrets.length; i++){
+			dTurrets[i].image = queue.getResult("duckfoot");
+		}
+		for(var i = 0; i < gTurrets.length; i++){
+			gTurrets[i].image = queue.getResult("lazer");
+		}
+	}
 
 }
 
