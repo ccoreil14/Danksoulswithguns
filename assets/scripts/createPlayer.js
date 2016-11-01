@@ -1,5 +1,5 @@
 var player;
-
+var iframecounter = 0;
 
 
 function createPlayer() {
@@ -21,6 +21,7 @@ function createPlayer() {
     player.scaleX = 0.15;
     player.scaleY = 0.15;
     player.tooStrong = false;
+    player.gotHit = false;
     player.gotoAndPlay("rotate");
     stage.addChild(player);
 
@@ -31,12 +32,23 @@ function playerShoot(mX, mY) {
     makePlayerBullet(player.x, player.y, mX, mY);
 }
 
-function checkPlayerCollision() {
-    //Iterate through the array of enemy bullets using a for loop
-    //for(){
-    //Remove the bullet from the array, as well as from the stage
-    //May need to add a boolean or something so the laser of the last boss doesn't disappear immediately on a hit
-    //}
+//checks player.gotHit boolean to track when the player has been hit, sets player.tooStrong to true so they take no damage
+function PlayerIFrames() {
+    if (player.gotHit === true) {
+        player.tooStrong = true;
+        if (iframecounter === 30) {
+            iframecounter = 0;
+            player.tooStrong = false;
+            player.gotHit = false;
+        }
+        iframecounter += 1;
+        player.alpha = 0;
+        if (iframecounter % 2 == 0) {
+            player.alpha = 1;
+        }
+    } else {
+        player.alpha = 1;
+    }
 }
 
 //This will return false if whatever x or y you pass in is out of bounds
