@@ -23,7 +23,19 @@ manifest = [
     {
         src: "images/instructions.png",
         id: "instructions"
-    },,
+    },
+    {
+        src: "images/Level1.png",
+        id: "level1"
+    },
+    {
+        src: "images/Level2.png",
+        id: "level2"
+    },
+    {
+        src: "images/Level3.png",
+        id: "level3"
+    },
     {
         src: "images/levelselect.png",
         id: "levelSelect"
@@ -110,10 +122,10 @@ manifest = [
     {
         src: "scripts/duckfootBullet" + jsEnd
     },
-	{
+    {
         src: "scripts/basicBullet" + jsEnd
     },
-	{
+    {
         src: "scripts/lazerBullet" + jsEnd
     },
     {
@@ -157,6 +169,9 @@ manifest = [
     },
     {
         src: "scripts/basicTurret" + jsEnd
+    },
+    {
+        src: "scripts/buildLevelSelect" + jsEnd
     },
     {
         src: "scripts/lazerTurret" + jsEnd
