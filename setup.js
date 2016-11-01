@@ -23,6 +23,10 @@ manifest = [
     {
         src: "images/instructions.png",
         id: "instructions"
+    },,
+    {
+        src: "images/levelselect.png",
+        id: "levelSelect"
     },
     {
         src: "images/powerup2B.png",
@@ -160,6 +164,7 @@ function displaySprites() {
 function loadComplete(evt) {
     createPlayArea();
     createPlayer();
+    createLevelSelect();
     createGameOver();
     createTitle();
     createInstructions();

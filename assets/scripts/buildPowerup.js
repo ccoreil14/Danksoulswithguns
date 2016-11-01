@@ -31,7 +31,7 @@ var powerTime = 0;
 function checkPowerupHit() {
     powerTime--;
     if (ndgmr.checkRectCollision(powerup, player)) {
-//        console.log("PowerUP!");
+//      console.log("PowerUP!");
         player.tooStrong = true;
         powerTime = (FPS * 5);
         movePowerup();

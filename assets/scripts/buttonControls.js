@@ -11,6 +11,8 @@ function setupButtons() {
     playButton = new createjs.Bitmap(queue.getResult("playButton"));
     playButton.x = 550;
     playButton.y = 400;
+    
+    
 
     stage.addChild(instructionsButton);
     stage.addChild(menuButton);

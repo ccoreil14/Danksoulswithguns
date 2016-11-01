@@ -18,6 +18,7 @@ function stateChange() {
         player.visible = false;
         healthBar.visible = false;
         victoryScreen.visible = false;
+        levelSelect.visible = false;
         break;
         //instructions state
     case 200:
@@ -34,7 +35,14 @@ function stateChange() {
         break;
         //levelSelect state
     case 300:
+        levelSelect.visible = false;
+        instructionsButton.visible = false;
+        playButton.visible = true;
+        menuButton.visible = false;
+        titleScreen.visible = false;
+        instructionsScreen.visible = false;
 
+        
         break;
         //levelOne state
     case 400:
