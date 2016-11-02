@@ -44,7 +44,7 @@ function resetGameTimer() {
 }
 
 function runGameTimer() {
-    if (dTurrets.length === 0 && bTurrets.length === 0 && gTurrets === 0) {
+    if (dTurrets.length === 0 && bTurrets.length === 0 && gTurrets.length === 0) {
         for (i = 0; i < duckfootBullets.length; i++) {
             stage.removeChild(duckfootBullets[i]);
         }
@@ -57,7 +57,7 @@ function runGameTimer() {
         for (i = 0; i < lazerBullets.length; i++) {
             stage.removeChild(lazerBullets[i]);
         }
-        if (state === 700) {
+        if (state === 400 || state === 500 || state === 600) {
             state = 900;
         }
 
