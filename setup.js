@@ -175,6 +175,9 @@ manifest = [
     },
     {
         src: "scripts/lazerTurret" + jsEnd
+    },
+    {
+        src: "scripts/setupSound" + jsEnd
     }
 
 ];
