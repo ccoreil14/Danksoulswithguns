@@ -40,44 +40,50 @@ function setupButtons() {
     });
 
     level1.on("click", function (evt) {
-        state=400;
-        letThereBeTurrets();
-        player.x = 400;
-        player.y = 380;
-        if (firstTime === true) {
-            createPowerup();
-            firstTime = false;
-        } else {
-            movePowerupBack();
+        if (state === 300) {
+            state = 400;
+            letThereBeTurrets();
+            player.x = 400;
+            player.y = 380;
+            if (firstTime === true) {
+                createPowerup();
+                firstTime = false;
+            } else {
+                movePowerupBack();
+            }
+            displaySprites();
         }
-        displaySprites();
     });
-    
-        level2.on("click", function (evt) {
-        state=500;
-        letThereBeTurrets();
-        player.x = 400;
-        player.y = 380;
-        if (firstTime === true) {
-            createPowerup();
-            firstTime = false;
-        } else {
-            movePowerupBack();
+
+    level2.on("click", function (evt) {
+        if (state === 300) {
+            state = 500;
+            letThereBeTurrets();
+            player.x = 400;
+            player.y = 380;
+            if (firstTime === true) {
+                createPowerup();
+                firstTime = false;
+            } else {
+                movePowerupBack();
+            }
+            displaySprites();
         }
-        displaySprites();
     });
-    
-        level3.on("click", function (evt) {
-        state=600;
-        letThereBeTurrets();
-        player.x = 400;
-        player.y = 380;
-        if (firstTime === true) {
-            createPowerup();
-            firstTime = false;
-        } else {
-            movePowerupBack();
+
+    level3.on("click", function (evt) {
+        if (state === 300) {
+            state = 600;
+            letThereBeTurrets();
+            player.x = 400;
+            player.y = 380;
+            if (firstTime === true) {
+                createPowerup();
+                firstTime = false;
+            } else {
+                movePowerupBack();
+            }
+            displaySprites();
         }
-        displaySprites();
     });
 }
