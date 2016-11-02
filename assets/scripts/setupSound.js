@@ -1,4 +1,4 @@
-var audioPath = "assets/Sounds/";
+var audioPath = "assets/sounds/";
 var sounds = [
     {
         id: "BossGun",

@@ -220,6 +220,7 @@ function displaySprites() {
 }
 
 function loadComplete(evt) {
+	
     createPlayArea();
     createPlayer();
     createLevelSelect();
