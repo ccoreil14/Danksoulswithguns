@@ -17,7 +17,11 @@ function loop() {
     updateBullets();
     movePlayer();
     checkDuckfootBulletCollision();
+	checkBasicBulletCollision();
+	checkLazerBulletCollision();
     updateDuckfootBullets();
+	updateBasicBullets();
+	updateLazerBullets();
     updateHealth();
     PlayerIFrames();
     stage.update();
@@ -38,12 +42,18 @@ function resetGameTimer() {
 }
 
 function runGameTimer() {
-    if (turrets.length === 0) {
+    if (dTurrets.length === 0 && bTurrets.length === 0 && gTurrets === 0) {
         for (i = 0; i < duckfootBullets.length; i++) {
             stage.removeChild(duckfootBullets[i]);
         }
         for (i = 0; i < playerbullets.length; i++) {
             stage.removeChild(playerbullets[i]);
+        }
+		for (i = 0; i < basicBullets.length; i++) {
+            stage.removeChild(basicBullets[i]);
+        }
+		for (i = 0; i < lazerBullets.length; i++) {
+            stage.removeChild(lazerBullets[i]);
         }
         if (state === 700) {
             state = 900;
@@ -68,12 +78,16 @@ function runGameTimer() {
         if (gameStarted) {
             timeUntilFire -= 1;
         }
-        moveTurretBetter();
+        moveDTurrets();
+		moveBTurrets();
+		moveGTurrets();
 
     }
     if (timeUntilFire === 0 && gameStarted) {
         timeUntilFire = 30;
         makeDuckfootBullet();
+		makeBasicBullet();
+		makeLazerBullet();
     }
 
 }
@@ -86,8 +100,20 @@ function isDead() {
         for (i = 0; i < duckfootBullets.length; i++) {
             stage.removeChild(duckfootBullets[i]);
         }
-        for (i = 0; i < turrets.length; i++) {
-            stage.removeChild(turrets[i]);
+		for (i = 0; i < basicBullets.length; i++) {
+            stage.removeChild(basicBullets[i]);
+        }
+		for (i = 0; i < lazerBullets.length; i++) {
+            stage.removeChild(lazerBullets[i]);
+        }
+        for (i = 0; i < dTurrets.length; i++) {
+            stage.removeChild(dTurrets[i]);
+        }
+		for (i = 0; i < bTurrets.length; i++) {
+            stage.removeChild(bTurrets[i]);
+        }
+		for (i = 0; i < gTurrets.length; i++) {
+            stage.removeChild(gTurrets[i]);
         }
         movePowerup();
         state = 800;

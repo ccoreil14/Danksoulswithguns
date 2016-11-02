@@ -25,6 +25,22 @@ manifest = [
         id: "instructions"
     },
     {
+        src: "images/Level1.png",
+        id: "level1"
+    },
+    {
+        src: "images/Level2.png",
+        id: "level2"
+    },
+    {
+        src: "images/Level3.png",
+        id: "level3"
+    },
+    {
+        src: "images/levelselect.png",
+        id: "levelSelect"
+    },
+    {
         src: "images/powerup2B.png",
         id: "powerup"
     },
@@ -51,6 +67,22 @@ manifest = [
     {
         src: "images/duckfootBullet.png",
         id: "duckfootBullet"
+    },
+    {
+        src: "images/basicTurret.png",
+        id: "basic"
+    },
+    {
+        src: "images/lazerTurret.png",
+        id: "lazer"
+    },
+    {
+        src: "images/basicBullet.png",
+        id: "basicBullet"
+    },
+    {
+        src: "images/lazerBullet.png",
+        id: "lazerBullet"
     },
     {
         src: "images/moon.png",
@@ -91,6 +123,12 @@ manifest = [
         src: "scripts/duckfootBullet" + jsEnd
     },
     {
+        src: "scripts/basicBullet" + jsEnd
+    },
+    {
+        src: "scripts/lazerBullet" + jsEnd
+    },
+    {
         src: "scripts/keyboardClicks" + jsEnd
     },
     {
@@ -128,6 +166,15 @@ manifest = [
     },
     {
         src: "scripts/duckfootTurret" + jsEnd
+    },
+    {
+        src: "scripts/basicTurret" + jsEnd
+    },
+    {
+        src: "scripts/buildLevelSelect" + jsEnd
+    },
+    {
+        src: "scripts/lazerTurret" + jsEnd
     }
 
 ];
@@ -160,6 +207,7 @@ function displaySprites() {
 function loadComplete(evt) {
     createPlayArea();
     createPlayer();
+    createLevelSelect();
     createGameOver();
     createTitle();
     createInstructions();

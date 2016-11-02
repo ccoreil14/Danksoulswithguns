@@ -22,63 +22,63 @@ function createDuckfoot(direction, x, y) {
     }
 }
 
-function moveTurretBetter() {
-    for (var i = 0; i < turrets.length; i++) {
+function moveDTurrets() {
+    for (var i = 0; i < dTurrets.length; i++) {
         //y pos
-        if (turrets[i].rotation === 0) {
-            if (inbounds(turrets[i].x, turrets[i].y + 30) == false) {
-                turrets[i].moveRight = false;
-            } else if (inbounds(turrets[i].x, turrets[i].y - 50) == false) {
-                turrets[i].moveRight = true;
+        if (dTurrets[i].rotation === 0) {
+            if (inbounds(dTurrets[i].x, dTurrets[i].y + 30) == false) {
+                dTurrets[i].moveRight = false;
+            } else if (inbounds(dTurrets[i].x, dTurrets[i].y - 50) == false) {
+                dTurrets[i].moveRight = true;
             }
-            if (turrets[i].moveRight) {
-                turrets[i].y += 5;
+            if (dTurrets[i].moveRight) {
+                dTurrets[i].y += 5;
             } else {
-                turrets[i].y -= 5;
+                dTurrets[i].y -= 5;
             }
         }
         //x pos
-        if (turrets[i].rotation === 90) {
-            if (inbounds(turrets[i].x + 70, turrets[i].y) == false) {
-                turrets[i].moveRight = false;
-            } else if (inbounds(turrets[i].x - 50, turrets[i].y) == false) {
-                turrets[i].moveRight = true;
+        if (dTurrets[i].rotation === 90) {
+            if (inbounds(dTurrets[i].x + 70, dTurrets[i].y) == false) {
+                dTurrets[i].moveRight = false;
+            } else if (inbounds(dTurrets[i].x - 50, dTurrets[i].y) == false) {
+                dTurrets[i].moveRight = true;
             }
-            if (turrets[i].moveRight) {
-                turrets[i].x += 5;
+            if (dTurrets[i].moveRight) {
+                dTurrets[i].x += 5;
             } else {
-                turrets[i].x -= 5;
+                dTurrets[i].x -= 5;
             }
         }
         //y pos
-        if (turrets[i].rotation === 180) {
-            if (inbounds(turrets[i].x, turrets[i].y - 30) == false) {
-                turrets[i].moveRight = false;
-            } else if (inbounds(turrets[i].x, turrets[i].y + 50) == false) {
-                turrets[i].moveRight = true;
+        if (dTurrets[i].rotation === 180) {
+            if (inbounds(dTurrets[i].x, dTurrets[i].y - 30) == false) {
+                dTurrets[i].moveRight = false;
+            } else if (inbounds(dTurrets[i].x, dTurrets[i].y + 50) == false) {
+                dTurrets[i].moveRight = true;
             }
-            if (turrets[i].moveRight) {
-                turrets[i].y -= 5;
+            if (dTurrets[i].moveRight) {
+                dTurrets[i].y -= 5;
             } else {
-                turrets[i].y += 5;
+                dTurrets[i].y += 5;
             }
         }
         //x pos
-        if (turrets[i].rotation === 270) {
-            if (inbounds(turrets[i].x - 70, turrets[i].y) == false) {
-                turrets[i].moveRight = false;
-            } else if (inbounds(turrets[i].x + 50, turrets[i].y) == false) {
-                turrets[i].moveRight = true;
+        if (dTurrets[i].rotation === 270) {
+            if (inbounds(dTurrets[i].x - 70, dTurrets[i].y) == false) {
+                dTurrets[i].moveRight = false;
+            } else if (inbounds(dTurrets[i].x + 50, dTurrets[i].y) == false) {
+                dTurrets[i].moveRight = true;
             }
-            if (turrets[i].moveRight) {
-                turrets[i].x -= 5;
+            if (dTurrets[i].moveRight) {
+                dTurrets[i].x -= 5;
             } else {
-                turrets[i].x += 5;
+                dTurrets[i].x += 5;
             }
         }
-        if (turrets[i].hitpoints === 0) {
-            stage.removeChild(turrets[i]);
-            turrets.splice(i--, 1);
+        if (dTurrets[i].hitpoints === 0) {
+            stage.removeChild(dTurrets[i]);
+            dTurrets.splice(i--, 1);
         }
     }
 }

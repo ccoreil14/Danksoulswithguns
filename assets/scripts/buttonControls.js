@@ -12,6 +12,8 @@ function setupButtons() {
     playButton.x = 550;
     playButton.y = 400;
 
+
+
     stage.addChild(instructionsButton);
     stage.addChild(menuButton);
     stage.addChild(playButton);
@@ -24,6 +26,11 @@ function setupButtons() {
     });
     var firstTime = true;
     playButton.on("click", function (evt) {
+        state = 300;
+    });
+
+    level1.on("click", function (evt) {
+        state=400;
         letThereBeTurrets();
         player.x = 400;
         player.y = 380;
@@ -33,8 +40,34 @@ function setupButtons() {
         } else {
             movePowerupBack();
         }
-        state = 700;
         displaySprites();
-
+    });
+    
+        level2.on("click", function (evt) {
+        state=500;
+        letThereBeTurrets();
+        player.x = 400;
+        player.y = 380;
+        if (firstTime === true) {
+            createPowerup();
+            firstTime = false;
+        } else {
+            movePowerupBack();
+        }
+        displaySprites();
+    });
+    
+        level3.on("click", function (evt) {
+        state=600;
+        letThereBeTurrets();
+        player.x = 400;
+        player.y = 380;
+        if (firstTime === true) {
+            createPowerup();
+            firstTime = false;
+        } else {
+            movePowerupBack();
+        }
+        displaySprites();
     });
 }
