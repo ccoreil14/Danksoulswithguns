@@ -57,7 +57,7 @@ function runGameTimer() {
         for (i = 0; i < lazerBullets.length; i++) {
             stage.removeChild(lazerBullets[i]);
         }
-        if (state === 700) {
+        if (state === 400) {
             state = 900;
         }
 
