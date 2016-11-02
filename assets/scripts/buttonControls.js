@@ -1,16 +1,16 @@
 function setupButtons() {
     instructionsButton = new createjs.Bitmap(queue.getResult("instructionsButton"));
-    instructionsButton.x = 400;
-    instructionsButton.y = 400;
+    instructionsButton.x = 200;
+    instructionsButton.y = 500;
 
     menuButton = new createjs.Bitmap(queue.getResult("menuButton"));
-    menuButton.x = 400;
-    menuButton.y = 400;
+    menuButton.x = 200;
+    menuButton.y = 500;
     menuButton.visible = false;
 
     playButton = new createjs.Bitmap(queue.getResult("playButton"));
-    playButton.x = 550;
-    playButton.y = 400;
+    playButton.x = 500;
+    playButton.y = 500;
 
     stage.addChild(instructionsButton);
     stage.addChild(menuButton);

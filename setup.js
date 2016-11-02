@@ -29,7 +29,7 @@ manifest = [
         id: "powerup"
     },
     {
-        src: "images/title.jpg",
+        src: "images/title.png",
         id: "title"
     },
     {
