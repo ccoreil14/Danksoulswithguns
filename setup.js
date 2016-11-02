@@ -45,7 +45,7 @@ manifest = [
         id: "powerup"
     },
     {
-        src: "images/title.jpg",
+        src: "images/title.png",
         id: "title"
     },
     {
@@ -65,6 +65,10 @@ manifest = [
         id: "duckfoot"
     },
     {
+        src: "images/duckfootTurretFlash.png",
+        id: "duckfootFlash"
+    },
+    {
         src: "images/duckfootBullet.png",
         id: "duckfootBullet"
     },
@@ -73,8 +77,16 @@ manifest = [
         id: "basic"
     },
     {
+        src: "images/basicTurretFlash.png",
+        id: "basicFlash"
+    },
+    {
         src: "images/lazerTurret.png",
         id: "lazer"
+    },
+    {
+        src: "images/lazerTurretFlash.png",
+        id: "lazerFlash"
     },
     {
         src: "images/basicBullet.png",

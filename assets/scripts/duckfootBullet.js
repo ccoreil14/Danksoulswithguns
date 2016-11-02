@@ -3,6 +3,10 @@ var duckfootBullets = [];
 var duckfootBulletSpeed = 15;
 
 function makeDuckfootBullet() {
+	for(var i = 0; i < dTurrets.length; i++){
+		dTurrets[i].image = queue.getResult("duckfootFlash");
+	}
+	
     for (var i = 0; i < dTurrets.length; i++) {
         duckfootBullet = new createjs.Bitmap(queue.getResult("duckfootBullet"));
 		duckfootBulletLeft = new createjs.Bitmap(queue.getResult("duckfootBullet"));
