@@ -3,6 +3,9 @@ var basicBullets = [];
 var basicBulletSpeed = 15;
 
 function makeBasicBullet() {
+	for(var i = 0; i < bTurrets.length; i++){
+		bTurrets[i].image = queue.getResult("basicFlash");
+	}
     for (var i = 0; i < bTurrets.length; i++) {
         basicBullet = new createjs.Bitmap(queue.getResult("basicBullet"));
 

@@ -44,7 +44,7 @@ function resetGameTimer() {
 }
 
 function runGameTimer() {
-    if (dTurrets.length === 0 && bTurrets.length === 0 && gTurrets === 0) {
+    if (dTurrets.length === 0 && bTurrets.length === 0 && gTurrets.length === 0) {
         for (i = 0; i < duckfootBullets.length; i++) {
             stage.removeChild(duckfootBullets[i]);
         }
@@ -57,7 +57,7 @@ function runGameTimer() {
         for (i = 0; i < lazerBullets.length; i++) {
             stage.removeChild(lazerBullets[i]);
         }
-        if (state === 400) {
+        if (state === 400 || state === 500 || state === 600) {
             state = 900;
         }
 
@@ -91,6 +91,18 @@ function runGameTimer() {
         makeBasicBullet();
         makeLazerBullet();
     }
+	
+	if(timeUntilFire === 27){
+		for(var i = 0; i < bTurrets.length; i++){
+			bTurrets[i].image = queue.getResult("basic");
+		}
+		for(var i = 0; i < dTurrets.length; i++){
+			dTurrets[i].image = queue.getResult("duckfoot");
+		}
+		for(var i = 0; i < gTurrets.length; i++){
+			gTurrets[i].image = queue.getResult("lazer");
+		}
+	}
 
 }
 

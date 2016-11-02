@@ -7,6 +7,9 @@ function stateChange() {
         break;
         //title state
     case 100:
+		level1.visible = false;
+        level2.visible = false;
+        level3.visible = false;
         looop = false;
         gameStarted = false;
         finalScore.text = "";
