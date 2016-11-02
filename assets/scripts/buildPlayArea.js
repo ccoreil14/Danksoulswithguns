@@ -5,6 +5,9 @@ var healthColor = "#0D0";
 var healthSize = 1.0;
 var graphics = new createjs.Graphics();
 var turret;
+var gameStarted = false;
+
+var countdown = new createjs.Text(3, "50px Arial", "#FFF");
 //var leftMovementUp = true;
 //var rightMovementUp = true;
 //var downMovementLeft = true;
@@ -17,11 +20,14 @@ function createPlayArea() {
 
     letThereBeTurrets();
 
+    countdown.x = 400;
+    countdown.y = 300;
 
     score.x = 100;
     score.y = 100;
     stage.addChild(playScreen);
     stage.addChild(score);
+    stage.addChild(countdown);
     createHealth();
     stage.update();
 }

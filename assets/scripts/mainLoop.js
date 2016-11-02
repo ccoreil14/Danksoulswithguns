@@ -5,6 +5,12 @@ var timeUntilFire = 30;
 var looop = false;
 
 function loop() {
+    if (gameStarted) {
+        playerShotDelay();
+    }
+    if (frameCount == (FPS * 3)) {
+        gameStarted = true;
+    }
     stateChange();
     runGameTimer();
     checkPlayerBulletCollision();
@@ -13,7 +19,6 @@ function loop() {
     checkDuckfootBulletCollision();
     updateDuckfootBullets();
     updateHealth();
-    playerShotDelay();
     PlayerIFrames();
     stage.update();
 }
@@ -28,7 +33,6 @@ function createGameTimer() {
 }
 
 function resetGameTimer() {
-    gameTimer.text = 0;
     frameCount = 0;
     looop = false;
 }
@@ -48,11 +52,26 @@ function runGameTimer() {
     }
 
     if (looop) {
+        if (frameCount == 0) {
+            countdown.visible = true;
+            countdown.text = 3;
+        } else if (frameCount == (FPS)) {
+            countdown.text = 2;
+        } else if (frameCount == (FPS * 2)) {
+            countdown.text = 1;
+        } else if (frameCount == (FPS * 3)) {
+            countdown.text = "GO!";
+        } else if (frameCount == (FPS * 4)) {
+            countdown.visible = false;
+        }
         frameCount += 1;
-        timeUntilFire -= 1;
+        if (gameStarted) {
+            timeUntilFire -= 1;
+        }
         moveTurretBetter();
+
     }
-    if (timeUntilFire === 0) {
+    if (timeUntilFire === 0 && gameStarted) {
         timeUntilFire = 30;
         makeDuckfootBullet();
     }
