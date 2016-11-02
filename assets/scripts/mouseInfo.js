@@ -25,12 +25,12 @@ function mouseInit() {
         moY = evt.stageY;
     });
     stage.on("stagemousedown", function (evt) {
-        if (state == 700) {
+        if (state == 400 || state == 500 || state == 600) {
             shoot = true;
         }
     });
     stage.on("stagemouseup", function (evt) {
-        if (state == 700 && gameStarted) {
+        if ((state == 400 || state == 500 || state == 600) && gameStarted) {
             shoot = false;
             shotdelay = 0;
         }

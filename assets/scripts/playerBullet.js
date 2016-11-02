@@ -59,11 +59,37 @@ function updateBullets() {
     }
 }
 
-function checkPlayerBulletCollision() {
+function checkPlayerBulletCollisionBTurrets() {
     for (var i = 0; i < playerbullets.length; i++) {
-        for (var j = 0; j < turrets.length; j++) {
-            if (ndgmr.checkRectCollision(playerbullets[i], turrets[j]) != null) {
-                turrets[j].hitpoints -= 1;
+        for (var j = 0; j < bTurrets.length; j++) {
+            if (ndgmr.checkRectCollision(playerbullets[i], bTurrets[j]) != null) {
+                bTurrets[j].hitpoints -= 1;
+                stage.removeChild(playerbullets[i]);
+                playerbullets.splice(i--, 1);
+                break;
+            }
+        }
+    }
+}
+
+function checkPlayerBulletCollisionDTurrets() {
+    for (var i = 0; i < playerbullets.length; i++) {
+        for (var j = 0; j < dTurrets.length; j++) {
+            if (ndgmr.checkRectCollision(playerbullets[i], dTurrets[j]) != null) {
+                dTurrets[j].hitpoints -= 1;
+                stage.removeChild(playerbullets[i]);
+                playerbullets.splice(i--, 1);
+                break;
+            }
+        }
+    }
+}
+
+function checkPlayerBulletCollisionGTurrets() {
+    for (var i = 0; i < playerbullets.length; i++) {
+        for (var j = 0; j < gTurrets.length; j++) {
+            if (ndgmr.checkRectCollision(playerbullets[i], gTurrets[j]) != null) {
+                gTurrets[j].hitpoints -= 1;
                 stage.removeChild(playerbullets[i]);
                 playerbullets.splice(i--, 1);
                 break;
