@@ -13,15 +13,17 @@ function loop() {
     }
     stateChange();
     runGameTimer();
-    checkPlayerBulletCollision();
+    checkPlayerBulletCollisionBTurrets();
+    checkPlayerBulletCollisionDTurrets();
+    checkPlayerBulletCollisionGTurrets();
     updateBullets();
     movePlayer();
     checkDuckfootBulletCollision();
-	checkBasicBulletCollision();
-	checkLazerBulletCollision();
+    checkBasicBulletCollision();
+    checkLazerBulletCollision();
     updateDuckfootBullets();
-	updateBasicBullets();
-	updateLazerBullets();
+    updateBasicBullets();
+    updateLazerBullets();
     updateHealth();
     PlayerIFrames();
     stage.update();
@@ -49,10 +51,10 @@ function runGameTimer() {
         for (i = 0; i < playerbullets.length; i++) {
             stage.removeChild(playerbullets[i]);
         }
-		for (i = 0; i < basicBullets.length; i++) {
+        for (i = 0; i < basicBullets.length; i++) {
             stage.removeChild(basicBullets[i]);
         }
-		for (i = 0; i < lazerBullets.length; i++) {
+        for (i = 0; i < lazerBullets.length; i++) {
             stage.removeChild(lazerBullets[i]);
         }
         if (state === 700) {
@@ -79,15 +81,15 @@ function runGameTimer() {
             timeUntilFire -= 1;
         }
         moveDTurrets();
-		moveBTurrets();
-		moveGTurrets();
+        moveBTurrets();
+        moveGTurrets();
 
     }
     if (timeUntilFire === 0 && gameStarted) {
         timeUntilFire = 30;
         makeDuckfootBullet();
-		makeBasicBullet();
-		makeLazerBullet();
+        makeBasicBullet();
+        makeLazerBullet();
     }
 	
 	if(timeUntilFire === 27){
@@ -112,19 +114,19 @@ function isDead() {
         for (i = 0; i < duckfootBullets.length; i++) {
             stage.removeChild(duckfootBullets[i]);
         }
-		for (i = 0; i < basicBullets.length; i++) {
+        for (i = 0; i < basicBullets.length; i++) {
             stage.removeChild(basicBullets[i]);
         }
-		for (i = 0; i < lazerBullets.length; i++) {
+        for (i = 0; i < lazerBullets.length; i++) {
             stage.removeChild(lazerBullets[i]);
         }
         for (i = 0; i < dTurrets.length; i++) {
             stage.removeChild(dTurrets[i]);
         }
-		for (i = 0; i < bTurrets.length; i++) {
+        for (i = 0; i < bTurrets.length; i++) {
             stage.removeChild(bTurrets[i]);
         }
-		for (i = 0; i < gTurrets.length; i++) {
+        for (i = 0; i < gTurrets.length; i++) {
             stage.removeChild(gTurrets[i]);
         }
         movePowerup();

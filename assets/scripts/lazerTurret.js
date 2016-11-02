@@ -1,7 +1,7 @@
 function createLazer(direction, x, y) {
     turret = new createjs.Bitmap(queue.getResult("lazer"));
     turret.regX = turret.regY = 50;
-	turret.scaleX = turret.scaleY = .7;
+    turret.scaleX = turret.scaleY = .7;
     turret.hitpoints = 3;
     turret.moveRight = true;
     turret.getImage = function () {
@@ -79,7 +79,7 @@ function moveGTurrets() {
         }
         if (gTurrets[i].hitpoints === 0) {
             stage.removeChild(gTurrets[i]);
-            gTurrets.splice(i--, 1);s
+            gTurrets.splice(i--, 1);
         }
     }
 }
