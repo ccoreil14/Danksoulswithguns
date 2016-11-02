@@ -19,6 +19,7 @@ function setupButtons() {
     stage.addChild(playButton);
     stage.enableMouseOver();
     instructionsButton.on("click", function (evt) {
+		console.log(state);
 		if(state === 100){
 			state = 200;
 		}
@@ -32,6 +33,7 @@ function setupButtons() {
     });
     var firstTime = true;
     playButton.on("click", function (evt) {
+		console.log(state);
 		if(state === 100){
 			state = 300;
 		}        

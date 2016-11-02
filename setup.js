@@ -231,6 +231,7 @@ function loadComplete(evt) {
     setupButtons();
     initCoorText();
     mouseInit();
+	//state = 100;
     //    createGameTimer();
 }
 
