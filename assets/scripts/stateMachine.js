@@ -7,6 +7,8 @@ function stateChange() {
         break;
         //title state
     case 100:
+        looop = false;
+        gameStarted = false;
         finalScore.text = "";
         instructionsButton.visible = true;
         playButton.visible = true;
@@ -22,6 +24,8 @@ function stateChange() {
         break;
         //instructions state
     case 200:
+        looop = false;
+        gameStarted = false;
         instructionsButton.visible = false;
         playButton.visible = true;
         instructionsButton.visible = false;
@@ -32,6 +36,7 @@ function stateChange() {
         playScreen.visible = false;
         overScreen.visible = false;
         victoryScreen.visible = false;
+        resetGameTimer();
         break;
         //levelSelect state
     case 300:
@@ -124,6 +129,7 @@ function stateChange() {
         break;
         //game over state
     case 800:
+        gameStarted = false;
         shoot = false;
         movePowerup();
         powerTime = 0;
@@ -139,9 +145,11 @@ function stateChange() {
         playScreen.visible = false;
         overScreen.visible = true;
         victoryScreen.visible = false;
+        resetGameTimer();
         break;
         //Victory state
     case 900:
+        gameStarted = false;
         shoot = false;
         movePowerup();
         powerTime = 0;
@@ -156,6 +164,7 @@ function stateChange() {
         overScreen.visible = false;
         victoryScreen.visible = true;
         menuButton.visible = true;
+        resetGameTimer();
         break;
     }
 }

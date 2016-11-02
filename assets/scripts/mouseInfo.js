@@ -30,7 +30,7 @@ function mouseInit() {
         }
     });
     stage.on("stagemouseup", function (evt) {
-        if (state == 700) {
+        if (state == 700 && gameStarted) {
             shoot = false;
             shotdelay = 0;
         }
