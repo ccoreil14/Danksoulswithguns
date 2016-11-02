@@ -142,6 +142,7 @@ function stateChange() {
         score.text = "Score: 0";
         instructionsButton.visible = false;
         playButton.visible = false;
+		playButton
         menuButton.visible = true;
         titleScreen.visible = false;
         instructionsScreen.visible = false;

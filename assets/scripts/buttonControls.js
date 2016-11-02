@@ -19,14 +19,22 @@ function setupButtons() {
     stage.addChild(playButton);
     stage.enableMouseOver();
     instructionsButton.on("click", function (evt) {
-        state = 200;
+		if(state === 100){
+			state = 200;
+		}
+        
     });
     menuButton.on("click", function (evt) {
-        state = 100;
+		if(state === 200 || state === 800 || state === 900){
+			state = 100;
+		}
+        
     });
     var firstTime = true;
     playButton.on("click", function (evt) {
-        state = 300;
+		if(state === 100){
+			state = 300;
+		}        
     });
 
     level1.on("click", function (evt) {
