@@ -1,4 +1,6 @@
-var playScreen;
+var level1;
+var level2;
+var level3;
 var score = new createjs.Text("Score: " + 0, "14px Arial", "#000");
 var dTurrets = [];
 var bTurrets = [];
@@ -17,18 +19,28 @@ countdown.visible = false;
 //var upMovementLeft = true;
 
 function createPlayArea() {
-    playScreen = new createjs.Bitmap(queue.getResult("levelOne"));
-    playScreen.x = playScreen.y = 0;
-    playScreen.visible = false;
+    level1 = new createjs.Bitmap(queue.getResult("levelOne"));
+    level1.x = level1.y = 0;
+    level1.visible = false;
+	
+	level2 = new createjs.Bitmap(queue.getResult("levelTwo"));
+    level2.x = level2.y = 0;
+    level2.visible = false;
+	
+	level3 = new createjs.Bitmap(queue.getResult("levelThree"));
+    level3.x = level3.y = 0;
+    level3.visible = false;
 
-//    letThereBeTurrets();
+
 
     countdown.x = 400;
     countdown.y = 300;
 
     score.x = 100;
     score.y = 100;
-    stage.addChild(playScreen);
+    stage.addChild(level1);
+	stage.addChild(level2);
+	stage.addChild(level3);
     stage.addChild(score);
     stage.addChild(countdown);
     createHealth();

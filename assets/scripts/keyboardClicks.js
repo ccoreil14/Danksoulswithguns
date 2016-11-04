@@ -14,6 +14,8 @@ var left = false;
 var up = false;
 var down = false;
 
+var cheat = false;
+
 var eggOn = false;
 
 var easter_egg = new Konami(function () {
@@ -87,6 +89,18 @@ function handleKeyUp(evt) {
     case KEYCODE_S:
         down = false;
         return false;
+    }
+}
+
+window.addEventListener("keydown", checkKeyPressed, false);
+
+function checkKeyPressed(e) {
+    if (e.keyCode == "74" && gameStarted) {
+        if (cheat) {
+            cheat = false;
+        } else {
+            cheat = true;
+        }
     }
 }
 

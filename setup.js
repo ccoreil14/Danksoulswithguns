@@ -8,6 +8,44 @@ var playButton;
 var menuButton;
 var loaded = false;
 
+var loadbarWidth = 20;
+var loadbarHeight = 20;
+var loadProgressLabel = new createjs.Text("", "18px Verdana", "#ffffff");
+loadProgressLabel.x = 380;
+loadProgressLabel.y = 350;
+var g = new createjs.Graphics().beginFill("#ffffff").drawRect(0, 0, loadbarWidth, loadbarHeight);
+var b = new createjs.Graphics().beginFill("#000000").drawRect(0, 0, 800, 600);
+var loadBar = new createjs.Shape(g);
+loadBar.x = 200;
+loadBar.y = 320;
+var loadingScreen = new createjs.Shape(b);
+loadingScreen.x = 0;
+loadingScreen.y = 0;
+
+function handleProgress() {
+    stage.setChildIndex(loadingScreen, stage.getNumChildren() - 2);
+    stage.setChildIndex(loadProgressLabel, stage.getNumChildren() - 1);
+    stage.setChildIndex(loadBar, stage.getNumChildren() - 1);
+    loadBar.scaleX = queue.progress * loadbarWidth;
+    var progressPrecentage = Math.round(queue.progress * 100);
+    loadProgressLabel.text = progressPrecentage + "% Loaded";
+    stage.update();
+}
+
+function handleComplete() {
+    loadProgressLabel.text = "100%";
+    loadBar.visible = false;
+    loadProgressLabel.visible = false;
+    loadingScreen.visible = false;
+    stage.update();
+}
+
+function createLoadScreen() {
+    stage.addChild(loadingScreen);
+    stage.addChild(loadBar);
+    stage.addChild(loadProgressLabel);
+    stage.update();
+}
 
 function setupCanvas() {
     var canvas = document.getElementById("game");
@@ -18,14 +56,63 @@ function setupCanvas() {
 
 manifest = [
     {
-        src: "images/loadScreen.jpg",
-        id: "loading"
-    },
+        id: "BossGun",
+        src: "sounds/bossGun.mp3"
+        },
     {
-        src: "scripts/loadingScreen" + jsEnd
-    },
+        id: "BossMusic",
+        src: "sounds/BossMusic.mp3"
+        },
     {
-        src: "images/gameover.jpg",
+        id: "EasterEggMusic",
+        src: "sounds/EasterEggMusic.mp3"
+        },
+    {
+        id: "GameOver",
+        src: "sounds/GameOver.mp3"
+        },
+    {
+        id: "Level1Music",
+        src: "sounds/Level1Music.mp3"
+        },
+    {
+        id: "Level2Music",
+        src: "sounds/Level2Music.mp3"
+        },
+    {
+        id: "Level2MusicAlt",
+        src: "sounds/Level2MusicAlt.mp3"
+        },
+    {
+        id: "Meme",
+        src: "sounds/Meme.mp3"
+        },
+    {
+        id: "MenuMusic",
+        src: "sounds/MenuMusic.mp3"
+        },
+    {
+        id: "PlayerGun",
+        src: "sounds/playerGun.wav"
+        },
+    {
+        id: "PowerUpGet",
+        src: "sounds/powerUp.mp3"
+        },
+    {
+        id: "Turret1",
+        src: "sounds/turret1.mp3"
+        },
+    {
+        id: "Turret2",
+        src: "sounds/turret2.mp3"
+        },
+    {
+        id: "Turret3",
+        src: "sounds/turret3.mp3"
+        },
+    {
+        src: "images/gameover.png",
         id: "gameover"
     },
     {
@@ -67,13 +154,21 @@ manifest = [
     {
         src: "images/muteBtn.png",
         id: "muteBtn"
-    },{
+    }, {
         src: "images/unmuteBtn.png",
         id: "unmuteBtn"
     },
     {
         src: "images/A51.png",
         id: "levelThree"
+    },
+    {
+        src: "images/bossTurret.png",
+        id: "boss"
+    },
+    {
+        src: "images/bossTurretFlash.png",
+        id: "bossFlash"
     },
     {
         src: "images/duckfootTurret.png",
@@ -112,8 +207,8 @@ manifest = [
         id: "lazerBullet"
     },
     {
-        src: "images/moon.png",
-        id: "playarea"
+        src: "images/credits.png",
+        id: "credits"
     },
     {
         src: "images/victory.png",
@@ -134,6 +229,10 @@ manifest = [
     {
         src: "images/ufo.png",
         id: "ufo"
+    },
+    {
+        src: "images/lazerSprite.png",
+        id: "bossBullet"
     },
     {
         src: "images/shotNorm.png",
@@ -213,26 +312,10 @@ var queue;
 
 function loadFiles() {
     queue = new createjs.LoadQueue(true, "assets/");
+    queue.addEventListener("complete", handleComplete);
+    queue.addEventListener("progress", handleProgress);
     queue.on("complete", loadComplete, this);
     queue.loadManifest(manifest);
-
-}
-
-
-
-
-
-function displaySprites() {
-
-    //	for(i = 0; i < 5; i++){
-    //		blocks.x=i*31+20;
-    //		blocks.y=215;
-    //		blocks.gotoAndStop(i);
-    //		blockArray.push(blocks.clone());
-    //	}
-    //	for(j = 0; j < 5; j++){
-    //		stage.addChild(blockArray[j]);	
-    //	}
 }
 
 function loadComplete(evt) {
@@ -250,14 +333,13 @@ function loadComplete(evt) {
         setupButtons();
         initCoorText();
         mouseInit();
-        createLoadScreen();
-
     }
     //    createGameTimer();
 }
 
 (function main() {
     setupCanvas();
+    createLoadScreen();
     loadFiles();
-    
+
 })();
