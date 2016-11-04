@@ -28,7 +28,7 @@ function setupButtons() {
     menuButton.on("click", function (evt) {
         if (state === 200 || state === 800 || state === 900) {
             state = 100;
-            playMenuMusic();
+            
         }
 
     });
