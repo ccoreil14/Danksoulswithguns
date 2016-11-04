@@ -51,6 +51,8 @@ function createPlayArea() {
 function letThereBeTurrets1() {
     bTurrets.length = 0;
     spawnBasicTurret();
+    spawnBasicTurret();
+    spawnBasicTurret();
 }
 
 function letThereBeTurrets2() {
@@ -58,6 +60,7 @@ function letThereBeTurrets2() {
     gTurrets.length = 0;
 
     spawnBasicTurret();
+    spawnLazerTurret();
     spawnLazerTurret();
 }
 
