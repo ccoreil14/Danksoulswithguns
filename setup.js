@@ -229,6 +229,7 @@ function displaySprites() {
 
 function loadComplete(evt) {
     if (!loaded) {
+        state = 100;
         loaded = true
         createPlayArea();
         createPlayer();
@@ -242,7 +243,6 @@ function loadComplete(evt) {
         mouseInit();
         createLoadScreen();
     }
-	//state = 100;
     //    createGameTimer();
 }
 
