@@ -6,6 +6,7 @@ var canvasX, CanvasY;
 var instructionsButton;
 var playButton;
 var menuButton;
+var loaded = false;
 
 
 function setupCanvas() {
@@ -16,6 +17,13 @@ function setupCanvas() {
 }
 
 manifest = [
+    {
+        src: "images/loadScreen.jpg",
+        id: "loading"
+    },
+    {
+        src: "scripts/loadingScreen" + jsEnd
+    },
     {
         src: "images/gameover.jpg",
         id: "gameover"
@@ -228,21 +236,22 @@ function displaySprites() {
 }
 
 function loadComplete(evt) {
-    createPlayArea();
-    createPlayer();
-    createLevelSelect();
-    createGameOver();
-    createTitle();
-    createInstructions();
-    createVictory();
-    initCoorText();
-    createMuteBtns();
-    setupButtons();
-    mouseInit();
-    state = 100;
-//    console.log("load complete");
-    playMenuMusic();
-
+    if (!loaded) {
+        state = 100;
+        loaded = true
+        createPlayArea();
+        createPlayer();
+        createLevelSelect();
+        createGameOver();
+        createTitle();
+        createInstructions();
+        createVictory();
+        setupButtons();
+        initCoorText();
+        mouseInit();
+        createLoadScreen();
+		playMenuMusic();
+    }
     //    createGameTimer();
 }
 

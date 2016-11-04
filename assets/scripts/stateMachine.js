@@ -7,7 +7,9 @@ function stateChange() {
         break;
         //title state
     case 100:
-		level1.visible = false;
+        countdown.visible = false;
+        healthBar.visible = false;
+        level1.visible = false;
         level2.visible = false;
         level3.visible = false;
         looop = false;
@@ -56,6 +58,7 @@ function stateChange() {
         break;
         //levelOne state
     case 400:
+        healthBar.visible = true;
         looop = true;
         level1.visible = false;
         level2.visible = false;
@@ -75,6 +78,7 @@ function stateChange() {
         break;
         //levelTwo state
     case 500:
+        healthBar.visible = true;
         looop = true;
         level1.visible = false;
         level2.visible = false;
@@ -94,6 +98,7 @@ function stateChange() {
         break;
         //levelThree state
     case 600:
+        healthBar.visible = true;
         looop = true;
         level1.visible = false;
         level2.visible = false;
