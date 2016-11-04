@@ -82,3 +82,31 @@ function moveDTurrets() {
         }
     }
 }
+
+
+function spawnDuckfootTurret() {
+    var randNum = Math.floor((Math.random() * 4) + 1);
+    var randX = Math.floor((Math.random() * 700) + 1);
+    var randY = Math.floor((Math.random() * 700) + 1);
+    var direction = "up";
+    var xpos = randX;
+    var ypos = 545;
+    if (randNum === 1) {
+        direction = "right";
+        xpos = 75;
+        ypos = randY;
+    } else if (randNum === 2) {
+        direction = "left";
+        xpos = 725;
+        ypos = randY;
+    } else if (randNum === 3) {
+        direction = "down";
+        xpos = randX;
+        ypos = 55;
+    }
+
+    createDuckfoot(direction, xpos, ypos);
+    dTurrets.push(turret);
+    stage.addChild(turret);
+
+}

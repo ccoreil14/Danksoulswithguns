@@ -8,7 +8,7 @@ var loadBar = new createjs.Shape(g);
 loadBar.x = 200;
 loadBar.y = 320;
 var loadingScreen = new createjs.Bitmap(queue.getResult("loading"));
-queue.addEventListener("complete", handleComplete);
+queue.adaEventListener("complete", handleComplete);
 queue.addEventListener("progress", handleProgress);
 
 function handleProgress() {

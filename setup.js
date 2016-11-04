@@ -251,7 +251,7 @@ function loadComplete(evt) {
         initCoorText();
         mouseInit();
         createLoadScreen();
-		playMenuMusic();
+
     }
     //    createGameTimer();
 }

@@ -43,6 +43,8 @@ function resetGameTimer() {
     looop = false;
 }
 
+var canWin = false;
+
 function runGameTimer() {
     if (dTurrets.length === 0 && bTurrets.length === 0 && gTurrets.length === 0) {
         for (i = 0; i < duckfootBullets.length; i++) {
@@ -58,8 +60,10 @@ function runGameTimer() {
             stage.removeChild(lazerBullets[i]);
         }
         if (state === 400 || state === 500 || state === 600) {
-            stopSound();
-            state = 900;
+            if (canWin === true) {
+                stopSound();
+                state = 900;
+            }
         }
 
     }
@@ -92,18 +96,18 @@ function runGameTimer() {
         makeBasicBullet();
         makeLazerBullet();
     }
-	
-	if(timeUntilFire === 27){
-		for(var i = 0; i < bTurrets.length; i++){
-			bTurrets[i].image = queue.getResult("basic");
-		}
-		for(var i = 0; i < dTurrets.length; i++){
-			dTurrets[i].image = queue.getResult("duckfoot");
-		}
-		for(var i = 0; i < gTurrets.length; i++){
-			gTurrets[i].image = queue.getResult("lazer");
-		}
-	}
+
+    if (timeUntilFire === 27) {
+        for (var i = 0; i < bTurrets.length; i++) {
+            bTurrets[i].image = queue.getResult("basic");
+        }
+        for (var i = 0; i < dTurrets.length; i++) {
+            dTurrets[i].image = queue.getResult("duckfoot");
+        }
+        for (var i = 0; i < gTurrets.length; i++) {
+            gTurrets[i].image = queue.getResult("lazer");
+        }
+    }
 
 }
 
