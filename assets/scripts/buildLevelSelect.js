@@ -6,21 +6,21 @@ function createLevelSelect() {
     stage.addChild(levelSelect);
     levelSelect.visible = false;
     
-    level1 = new createjs.Bitmap(queue.getResult("level1"));
-    level1.x = 50; 
-    level1.y = 400; 
-    level1.scaleX = level1.scaleY = 0.5;
-    stage.addChild(level1);
+    level1Btn = new createjs.Bitmap(queue.getResult("level1"));
+    level1Btn.x = 50; 
+    level1Btn.y = 400; 
+    level1Btn.scaleX = level1Btn.scaleY = 0.5;
+    stage.addChild(level1Btn);
 
-    level2 = new createjs.Bitmap(queue.getResult("level2"));
-    level2.x = 300; 
-    level2.y = 400; 
-    level2.scaleX = level2.scaleY = 0.5;
-    stage.addChild(level2);
+    level2Btn = new createjs.Bitmap(queue.getResult("level2"));
+    level2Btn.x = 300; 
+    level2Btn.y = 400; 
+    level2Btn.scaleX = level2Btn.scaleY = 0.5;
+    stage.addChild(level2Btn);
     
-    level3 = new createjs.Bitmap(queue.getResult("level3"));
-    level3.x = 550; 
-    level3.y = 400; 
-    level3.scaleX = level3.scaleY = 0.5;
-    stage.addChild(level3);
+    level3Btn = new createjs.Bitmap(queue.getResult("level3"));
+    level3Btn.x = 550; 
+    level3Btn.y = 400; 
+    level3Btn.scaleX = level3Btn.scaleY = 0.5;
+    stage.addChild(level3Btn);
 }

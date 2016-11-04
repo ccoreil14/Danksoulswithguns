@@ -64,7 +64,7 @@ manifest = [
         src: "scripts/loadingScreen" + jsEnd
     },
     {
-        src: "images/gameover.jpg",
+        src: "images/gameover.png",
         id: "gameover"
     },
     {
@@ -102,6 +102,13 @@ manifest = [
     {
         src: "images/space.png",
         id: "levelTwo"
+    },
+    {
+        src: "images/muteBtn.png",
+        id: "muteBtn"
+    },{
+        src: "images/unmuteBtn.png",
+        id: "unmuteBtn"
     },
     {
         src: "images/A51.png",
@@ -144,8 +151,8 @@ manifest = [
         id: "lazerBullet"
     },
     {
-        src: "images/moon.png",
-        id: "playarea"
+        src: "images/credits.png",
+        id: "credits"
     },
     {
         src: "images/victory.png",
@@ -249,6 +256,7 @@ function loadFiles() {
     queue.addEventListener("progress", handleProgress);
     queue.on("complete", loadComplete, this);
     queue.loadManifest(manifest);
+
 }
 
 
@@ -279,10 +287,12 @@ function loadComplete(evt) {
         createTitle();
         createInstructions();
         createVictory();
+        createMuteBtns();
         setupButtons();
         initCoorText();
         mouseInit();
         playMenuMusic();
+		playMenuMusic();
     }
     //    createGameTimer();
 }
@@ -291,4 +301,5 @@ function loadComplete(evt) {
     setupCanvas();
     createLoadScreen();
     loadFiles();
+    
 })();

@@ -68,6 +68,7 @@ function makeBasicBullet() {
         angle = angle * (180 / Math.PI);
 
         basicBullet.rotation = angle;
+        playTurret3();
 
         var meowX = player.x - can.offsetLeft;
         var meowY = player.y - can.offsetTop;

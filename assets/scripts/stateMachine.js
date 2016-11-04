@@ -9,10 +9,10 @@ function stateChange() {
     case 100:
         countdown.visible = false;
         healthBar.visible = false;
-        level1.visible = false;
-        level2.visible = false;
-        level3.visible = false;
-        looop = false;
+        level1Btn.visible = false;
+		level2Btn.visible = false;
+		level3Btn.visible = false;
+		looop = false;
         gameStarted = false;
         finalScore.text = "";
         instructionsButton.visible = true;
@@ -20,7 +20,9 @@ function stateChange() {
         menuButton.visible = false;
         titleScreen.visible = true;
         instructionsScreen.visible = false;
-        playScreen.visible = false;
+        level1.visible = false;
+		level2.visible = false;
+		level3.visible = false;
         overScreen.visible = false;
         player.visible = false;
         healthBar.visible = false;
@@ -38,17 +40,16 @@ function stateChange() {
         menuButton.visible = true;
         titleScreen.visible = false;
         instructionsScreen.visible = true;
-        playScreen.visible = false;
         overScreen.visible = false;
         victoryScreen.visible = false;
         resetGameTimer();
         break;
         //levelSelect state
     case 300:
-        levelSelect.visible = false;
-        level1.visible = true;
-        level2.visible = true;
-        level3.visible = true;
+        levelSelect.visible = true;
+        level1Btn.visible = true;
+		level2Btn.visible = true;
+		level3Btn.visible = true;
         instructionsButton.visible = false;
         playButton.visible = false;
         menuButton.visible = false;
@@ -60,15 +61,19 @@ function stateChange() {
     case 400:
         healthBar.visible = true;
         looop = true;
-        level1.visible = false;
-        level2.visible = false;
-        level3.visible = false;
         instructionsButton.visible = false;
         playButton.visible = false;
         menuButton.visible = false;
         titleScreen.visible = false;
         instructionsScreen.visible = false;
-        playScreen.visible = true;
+		levelSelect.visible = false;
+		levelSelect.visible = true;
+        level1Btn.visible =false;
+		level2Btn.visible =false;
+		level3Btn.visible =false;
+        level1.visible = true;
+		level2.visible = false;
+		level3.visible = false;
         overScreen.visible = false;
         checkPowerupHit();
         player.visible = true;
@@ -80,15 +85,17 @@ function stateChange() {
     case 500:
         healthBar.visible = true;
         looop = true;
-        level1.visible = false;
-        level2.visible = false;
-        level3.visible = false;
         instructionsButton.visible = false;
         playButton.visible = false;
         menuButton.visible = false;
         titleScreen.visible = false;
         instructionsScreen.visible = false;
-        playScreen.visible = true;
+		level1Btn.visible =false;
+		level2Btn.visible =false;
+		level3Btn.visible =false;
+        level1.visible = false;
+		level2.visible = true;
+		level3.visible = false;
         overScreen.visible = false;
         checkPowerupHit();
         player.visible = true;
@@ -100,15 +107,17 @@ function stateChange() {
     case 600:
         healthBar.visible = true;
         looop = true;
-        level1.visible = false;
-        level2.visible = false;
-        level3.visible = false;
         instructionsButton.visible = false;
         playButton.visible = false;
         menuButton.visible = false;
         titleScreen.visible = false;
         instructionsScreen.visible = false;
-        playScreen.visible = true;
+		level1Btn.visible =false;
+		level2Btn.visible =false;
+		level3Btn.visible =false;
+        level1.visible = false;
+		level2.visible = false;
+		level3.visible = true;
         overScreen.visible = false;
         checkPowerupHit();
         player.visible = true;
@@ -118,22 +127,7 @@ function stateChange() {
         break;
         //game state
     case 700:
-        looop = true;
-        level1.visible = false;
-        level2.visible = false;
-        level3.visible = false;
-        instructionsButton.visible = false;
-        playButton.visible = false;
-        menuButton.visible = false;
-        titleScreen.visible = false;
-        instructionsScreen.visible = false;
-        playScreen.visible = true;
-        overScreen.visible = false;
-        checkPowerupHit();
-        player.visible = true;
-        healthBar.visible = true;
-        levelSelect.visible = false;
-        isDead();
+        //state is dead
         break;
         //game over state
     case 800:
@@ -147,11 +141,12 @@ function stateChange() {
         score.text = "Score: 0";
         instructionsButton.visible = false;
         playButton.visible = false;
-		playButton
         menuButton.visible = true;
         titleScreen.visible = false;
         instructionsScreen.visible = false;
-        playScreen.visible = false;
+        level1.visible = false;
+		level2.visible = false;
+		level3.visible = false;
         overScreen.visible = true;
         victoryScreen.visible = false;
         resetGameTimer();
@@ -169,7 +164,9 @@ function stateChange() {
         playButton.visible = false;
         titleScreen.visible = false;
         instructionsScreen.visible = false;
-        playScreen.visible = false;
+        level1.visible = false;
+		level2.visible = false;
+		level3.visible = false;
         overScreen.visible = false;
         victoryScreen.visible = true;
         menuButton.visible = true;
