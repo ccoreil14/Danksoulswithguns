@@ -1,9 +1,10 @@
 function createBasic(direction, x, y) {
     turret = new createjs.Bitmap(queue.getResult("basic"));
     turret.regX = turret.regY = 50;
-	turret.scaleX = turret.scaleY = .7;
+    turret.scaleX = turret.scaleY = .7;
     turret.hitpoints = 3;
     turret.moveRight = true;
+    turret.visible = false;
     turret.getImage = function () {
         return this;
     }
@@ -25,6 +26,7 @@ function createBasic(direction, x, y) {
 
 function moveBTurrets() {
     for (var i = 0; i < bTurrets.length; i++) {
+        bTurrets[i].visible = true;
         //y pos
         if (bTurrets[i].rotation === 0) {
             if (inbounds(bTurrets[i].x, bTurrets[i].y + 30) == false) {

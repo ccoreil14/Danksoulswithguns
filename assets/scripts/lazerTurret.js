@@ -4,6 +4,7 @@ function createLazer(direction, x, y) {
     turret.scaleX = turret.scaleY = .7;
     turret.hitpoints = 3;
     turret.moveRight = true;
+    turret.visible = false;
     turret.getImage = function () {
         return this;
     }
@@ -25,6 +26,7 @@ function createLazer(direction, x, y) {
 
 function moveGTurrets() {
     for (var i = 0; i < gTurrets.length; i++) {
+        gTurrets[i].visible = true;
         //y pos
         if (gTurrets[i].rotation === 0) {
             if (inbounds(gTurrets[i].x, gTurrets[i].y + 30) == false) {

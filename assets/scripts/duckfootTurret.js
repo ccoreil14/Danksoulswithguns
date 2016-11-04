@@ -1,7 +1,7 @@
 function createDuckfoot(direction, x, y) {
     turret = new createjs.Bitmap(queue.getResult("duckfoot"));
     turret.regX = turret.regY = 50;
-	turret.scaleX = turret.scaleY = .7;
+    turret.scaleX = turret.scaleY = .7;
     turret.hitpoints = 3;
     turret.moveRight = true;
     turret.getImage = function () {
