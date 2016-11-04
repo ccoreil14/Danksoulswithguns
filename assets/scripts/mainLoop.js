@@ -58,6 +58,7 @@ function runGameTimer() {
             stage.removeChild(lazerBullets[i]);
         }
         if (state === 400 || state === 500 || state === 600) {
+            stopSound();
             state = 900;
         }
 

@@ -246,6 +246,7 @@ function loadComplete(evt) {
         createTitle();
         createInstructions();
         createVictory();
+        createMuteBtns();
         setupButtons();
         initCoorText();
         mouseInit();
