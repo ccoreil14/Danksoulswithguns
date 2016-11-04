@@ -96,7 +96,6 @@ window.addEventListener("keydown", checkKeyPressed, false);
 
 function checkKeyPressed(e) {
     if (e.keyCode == "74" && gameStarted) {
-        console.log("CHEATER");
         if (cheat) {
             cheat = false;
         } else {
