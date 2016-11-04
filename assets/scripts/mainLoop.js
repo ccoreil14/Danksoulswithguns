@@ -6,7 +6,6 @@ var looop = false;
 
 function loop() {
     if (gameStarted) {
-        console.log("ayyyyyy");
         playerShotDelay();
     }
     runGameTimer();
