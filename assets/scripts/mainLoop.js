@@ -7,17 +7,12 @@ var looop = false;
 function loop() {
     if (gameStarted) {
         playerShotDelay();
-		runGameTimer();
     }
-    if (frameCount == (FPS * 3)) {
-        gameStarted = true;
-    }
-	
-	stateChange();
-    
-    
+    runGameTimer();
+
+    stateChange();
+
     stage.update();
-    
 }
 createjs.Ticker.addEventListener("tick", loop);
 createjs.Ticker.setFPS(FPS);
@@ -35,7 +30,7 @@ function resetGameTimer() {
 }
 
 function runGameTimer() {
-	checkPlayerBulletCollisionBTurrets();
+    checkPlayerBulletCollisionBTurrets();
     checkPlayerBulletCollisionDTurrets();
     checkPlayerBulletCollisionGTurrets();
     updateBullets();
@@ -48,9 +43,9 @@ function runGameTimer() {
     updateLazerBullets();
     updateHealth();
     PlayerIFrames();
-	
-	
-	
+
+
+
     if (dTurrets.length === 0 && bTurrets.length === 0 && gTurrets.length === 0) {
         for (i = 0; i < duckfootBullets.length; i++) {
             stage.removeChild(duckfootBullets[i]);
@@ -83,6 +78,7 @@ function runGameTimer() {
             countdown.text = "GO!";
         } else if (frameCount == (FPS * 4)) {
             countdown.visible = false;
+            gameStarted = true;
         }
         frameCount += 1;
         if (gameStarted) {
@@ -99,18 +95,18 @@ function runGameTimer() {
         makeBasicBullet();
         makeLazerBullet();
     }
-	
-	if(timeUntilFire === 27){
-		for(var i = 0; i < bTurrets.length; i++){
-			bTurrets[i].image = queue.getResult("basic");
-		}
-		for(var i = 0; i < dTurrets.length; i++){
-			dTurrets[i].image = queue.getResult("duckfoot");
-		}
-		for(var i = 0; i < gTurrets.length; i++){
-			gTurrets[i].image = queue.getResult("lazer");
-		}
-	}
+
+    if (timeUntilFire === 27 && gameStarted) {
+        for (var i = 0; i < bTurrets.length; i++) {
+            bTurrets[i].image = queue.getResult("basic");
+        }
+        for (var i = 0; i < dTurrets.length; i++) {
+            dTurrets[i].image = queue.getResult("duckfoot");
+        }
+        for (var i = 0; i < gTurrets.length; i++) {
+            gTurrets[i].image = queue.getResult("lazer");
+        }
+    }
 
 }
 
