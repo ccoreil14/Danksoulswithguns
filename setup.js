@@ -25,7 +25,7 @@ manifest = [
         src: "scripts/loadingScreen" + jsEnd
     },
     {
-        src: "images/gameover.jpg",
+        src: "images/gameover.png",
         id: "gameover"
     },
     {
