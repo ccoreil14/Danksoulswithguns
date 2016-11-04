@@ -115,7 +115,7 @@ function spawnBasicTurret() {
     stage.addChild(turret);
 }
 var spawnTime = (FPS * 5);
-var totalGameTime = (FPS * 120);
+var totalGameTime = (FPS * 60);
 
 function spawnLevel1() {
     spawnTime--;

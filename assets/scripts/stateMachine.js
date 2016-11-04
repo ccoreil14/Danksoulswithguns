@@ -154,7 +154,7 @@ function stateChange() {
         break;
         //game over state
     case 800:
-        totalGameTime = (FPS * 120);
+        totalGameTime = (FPS * 60);
         gameStarted = false;
         shoot = false;
         movePowerup();
@@ -178,7 +178,7 @@ function stateChange() {
         break;
         //Victory state
     case 900:
-        totalGameTime = (FPS * 120);
+        totalGameTime = (FPS * 60);
         gameStarted = false;
         shoot = false;
         movePowerup();
