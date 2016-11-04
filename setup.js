@@ -242,6 +242,7 @@ function loadComplete(evt) {
         mouseInit();
         createLoadScreen();
     }
+	//state = 100;
     //    createGameTimer();
 }
 

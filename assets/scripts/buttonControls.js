@@ -19,55 +19,71 @@ function setupButtons() {
     stage.addChild(playButton);
     stage.enableMouseOver();
     instructionsButton.on("click", function (evt) {
-        state = 200;
+		console.log(state);
+		if(state === 100){
+			state = 200;
+		}
+        
     });
     menuButton.on("click", function (evt) {
-        state = 100;
+		if(state === 200 || state === 800 || state === 900){
+			state = 100;
+		}
+        
     });
     var firstTime = true;
     playButton.on("click", function (evt) {
-        state = 300;
+		console.log(state);
+		if(state === 100){
+			state = 300;
+		}        
     });
 
     level1.on("click", function (evt) {
-        state=400;
-        letThereBeTurrets();
-        player.x = 400;
-        player.y = 380;
-        if (firstTime === true) {
-            createPowerup();
-            firstTime = false;
-        } else {
-            movePowerupBack();
+        if (state === 300) {
+            state = 400;
+            letThereBeTurrets();
+            player.x = 400;
+            player.y = 380;
+            if (firstTime === true) {
+                createPowerup();
+                firstTime = false;
+            } else {
+                movePowerupBack();
+            }
+            displaySprites();
         }
-        displaySprites();
     });
-    
-        level2.on("click", function (evt) {
-        state=500;
-        letThereBeTurrets();
-        player.x = 400;
-        player.y = 380;
-        if (firstTime === true) {
-            createPowerup();
-            firstTime = false;
-        } else {
-            movePowerupBack();
+
+    level2.on("click", function (evt) {
+        if (state === 300) {
+            state = 500;
+            letThereBeTurrets();
+            player.x = 400;
+            player.y = 380;
+            if (firstTime === true) {
+                createPowerup();
+                firstTime = false;
+            } else {
+                movePowerupBack();
+            }
+            displaySprites();
         }
-        displaySprites();
     });
-    
-        level3.on("click", function (evt) {
-        state=600;
-        letThereBeTurrets();
-        player.x = 400;
-        player.y = 380;
-        if (firstTime === true) {
-            createPowerup();
-            firstTime = false;
-        } else {
-            movePowerupBack();
+
+    level3.on("click", function (evt) {
+        if (state === 300) {
+            state = 600;
+            letThereBeTurrets();
+            player.x = 400;
+            player.y = 380;
+            if (firstTime === true) {
+                createPowerup();
+                firstTime = false;
+            } else {
+                movePowerupBack();
+            }
+            displaySprites();
         }
-        displaySprites();
     });
 }
