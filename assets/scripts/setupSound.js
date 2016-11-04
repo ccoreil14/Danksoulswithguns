@@ -58,62 +58,63 @@ var sounds = [
         }
 
     ];
+createjs.Sound.alternateExtensions = ["mp3"];
 createjs.Sound.addEventListener("fileload", loadComplete);
 createjs.Sound.registerSounds(sounds, audioPath);
 
-function playBossGun(e){
+function playBossGun(e) {
     createjs.Sound.play("BossGun");
 }
 
-function playBossMusic(e){
+function playBossMusic(e) {
     createjs.Sound.play("BossMusic");
 }
 
-function playEasterEggMusic(e){
+function playEasterEggMusic(e) {
     createjs.Sound.play("EasterEggMusic");
 }
 
-function playGameOver(e){
+function playGameOver(e) {
     createjs.Sound.play("GameOver");
 }
 
-function playLevel1Music(e){
+function playLevel1Music(e) {
     createjs.Sound.play("Level1Music");
 }
 
-function playLevel2Music(e){
+function playLevel2Music(e) {
     createjs.Sound.play("Level2Music");
 }
 
-function playLevel2MusicAlt(e){
+function playLevel2MusicAlt(e) {
     createjs.Sound.play("Level2MusicAlt");
 }
 
-function playMeme(e){
+function playMeme(e) {
     createjs.Sound.play("Meme");
 }
 
-function playMenuMusic(e){
+function playMenuMusic(e) {
     createjs.Sound.play("MenuMusic");
 }
 
-function playPlayerGun(e){
+function playPlayerGun(e) {
     createjs.Sound.play("PlayerGun");
 }
 
-function playTurret1(e){
+function playTurret1(e) {
     createjs.Sound.play("Turret1");
 }
 
-function playTurret2(e){
+function playTurret2(e) {
     createjs.Sound.play("Turret2");
 }
 
-function playTurret3(e){
+function playTurret3(e) {
     createjs.Sound.play("Turret3");
 }
 
-function playPowerUpGet(e){
+function playPowerUpGet(e) {
     createjs.Sound.play("PowerUpGet");
 }
 
