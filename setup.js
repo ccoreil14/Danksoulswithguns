@@ -112,9 +112,6 @@ manifest = [
         src: "sounds/turret3.mp3"
         },
     {
-        src: "scripts/loadingScreen" + jsEnd
-    },
-    {
         src: "images/gameover.png",
         id: "gameover"
     },

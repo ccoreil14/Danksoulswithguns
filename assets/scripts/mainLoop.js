@@ -35,9 +35,11 @@ function runGameTimer() {
     checkPlayerBulletCollisionGTurrets();
     updateBullets();
     movePlayer();
-    checkDuckfootBulletCollision();
-    checkBasicBulletCollision();
-    checkLazerBulletCollision();
+    if (!cheat) {
+        checkDuckfootBulletCollision();
+        checkBasicBulletCollision();
+        checkLazerBulletCollision();
+    }
     updateDuckfootBullets();
     updateBasicBullets();
     updateLazerBullets();
