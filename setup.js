@@ -8,6 +8,45 @@ var playButton;
 var menuButton;
 var loaded = false;
 
+var loadbarWidth = 20;
+var loadbarHeight = 20;
+var loadProgressLabel = new createjs.Text("", "18px Verdana", "#ffffff");
+loadProgressLabel.x = 380;
+loadProgressLabel.y = 350;
+var g = new createjs.Graphics().beginFill("#ffffff").drawRect(0, 0, loadbarWidth, loadbarHeight);
+var b = new createjs.Graphics().beginFill("#000000").drawRect(0, 0, 800, 600);
+var loadBar = new createjs.Shape(g);
+loadBar.x = 200;
+loadBar.y = 320;
+var loadingScreen = new createjs.Shape(b);
+loadingScreen.x = 0;
+loadingScreen.y = 0;
+
+function handleProgress() {
+    stage.setChildIndex(loadingScreen, stage.getNumChildren() - 2);
+    stage.setChildIndex(loadProgressLabel, stage.getNumChildren() - 1);
+    stage.setChildIndex(loadBar, stage.getNumChildren() - 1);
+    loadBar.scaleX = queue.progress * loadbarWidth;
+    var progressPrecentage = Math.round(queue.progress * 100);
+    loadProgressLabel.text = progressPrecentage + "% Loaded";
+    stage.update();
+}
+
+function handleComplete() {
+    loadProgressLabel.text = "100%";
+
+    loadBar.visible = false;
+    loadProgressLabel.visible = false;
+    loadingScreen.visible = false;
+    stage.update();
+}
+
+function createLoadScreen() {
+    stage.addChild(loadingScreen);
+    stage.addChild(loadBar);
+    stage.addChild(loadProgressLabel);
+    stage.update();
+}
 
 function setupCanvas() {
     var canvas = document.getElementById("game");
@@ -206,6 +245,8 @@ var queue;
 
 function loadFiles() {
     queue = new createjs.LoadQueue(true, "assets/");
+    queue.addEventListener("complete", handleComplete);
+    queue.addEventListener("progress", handleProgress);
     queue.on("complete", loadComplete, this);
     queue.loadManifest(manifest);
 }
@@ -241,12 +282,13 @@ function loadComplete(evt) {
         setupButtons();
         initCoorText();
         mouseInit();
-        createLoadScreen();
+        playMenuMusic();
     }
     //    createGameTimer();
 }
 
 (function main() {
     setupCanvas();
+    createLoadScreen();
     loadFiles();
 })();
