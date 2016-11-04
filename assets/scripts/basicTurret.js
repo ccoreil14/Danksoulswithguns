@@ -120,7 +120,7 @@ var totalGameTime = (FPS * 60);
 function spawnLevel1() {
     spawnTime--;
     if (spawnTime <= 0) {
-        spawnTime = (FPS * 3);
+        spawnTime = (FPS * 5);
         spawnBasicTurret();
     }
 }
@@ -128,7 +128,7 @@ function spawnLevel1() {
 function spawnLevel2() {
     spawnTime--;
     if (spawnTime <= 0) {
-        spawnTime = (FPS * 3);
+        spawnTime = (FPS * 5);
         var rand = Math.floor(Math.random() * 2);
         if (rand === 0) {
             spawnBasicTurret();
@@ -141,7 +141,7 @@ function spawnLevel2() {
 function spawnLevel3() {
     spawnTime--;
     if (spawnTime <= 0) {
-        spawnTime = (FPS * 3);
+        spawnTime = (FPS * 5);
         var rand = Math.floor(Math.random() * 3);
         if (rand === 0) {
             spawnBasicTurret();

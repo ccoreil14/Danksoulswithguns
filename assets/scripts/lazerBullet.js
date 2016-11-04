@@ -1,6 +1,6 @@
 var lazerBullets = [];
 
-var lazerBulletSpeed = 5;
+var lazerBulletSpeed = 20;
 
 function makeLazerBullet() {
     for (var i = 0; i < gTurrets.length; i++) {
