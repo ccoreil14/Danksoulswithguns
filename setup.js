@@ -166,6 +166,14 @@ manifest = [
         id: "levelThree"
     },
     {
+        src: "images/bossTurret.png",
+        id: "boss"
+    },
+    {
+        src: "images/bossTurretFlash.png",
+        id: "bossFlash"
+    },
+    {
         src: "images/duckfootTurret.png",
         id: "duckfoot"
     },
@@ -224,6 +232,10 @@ manifest = [
     {
         src: "images/ufo.png",
         id: "ufo"
+    },
+    {
+        src: "images/lazerSprite.png",
+        id: "bossBullet"
     },
     {
         src: "images/shotNorm.png",
