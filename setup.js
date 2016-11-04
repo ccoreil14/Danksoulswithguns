@@ -56,9 +56,6 @@ function setupCanvas() {
 
 manifest = [
     {
-        src: "scripts/loadingScreen" + jsEnd
-    },
-    {
         src: "images/gameover.png",
         id: "gameover"
     },

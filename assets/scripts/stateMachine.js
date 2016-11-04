@@ -85,6 +85,12 @@ function stateChange() {
         healthBar.visible = true;
         levelSelect.visible = false;
         isDead();
+        totalGameTime--;
+        if (totalGameTime > 0) {
+            spawnLevel1();
+        } else {
+            canWin = true;
+        }
         break;
         //levelTwo state
     case 500:
@@ -107,6 +113,12 @@ function stateChange() {
         healthBar.visible = true;
         levelSelect.visible = false;
         isDead();
+        totalGameTime--;
+        if (totalGameTime > 0) {
+            spawnLevel2();
+        } else {
+            canWin = true;
+        }
         break;
         //levelThree state
     case 600:
@@ -129,6 +141,12 @@ function stateChange() {
         healthBar.visible = true;
         levelSelect.visible = false;
         isDead();
+        totalGameTime--;
+        if (totalGameTime > 0) {
+            spawnLevel3();
+        } else {
+            canWin = true;
+        }
         break;
         //game state
     case 700:
@@ -136,6 +154,7 @@ function stateChange() {
         break;
         //game over state
     case 800:
+        totalGameTime = (FPS * 60);
         gameStarted = false;
         shoot = false;
         movePowerup();
@@ -146,6 +165,7 @@ function stateChange() {
         score.text = "Score: 0";
         instructionsButton.visible = false;
         playButton.visible = false;
+        playButton
         menuButton.visible = true;
         titleScreen.visible = false;
         instructionsScreen.visible = false;
@@ -158,6 +178,7 @@ function stateChange() {
         break;
         //Victory state
     case 900:
+        totalGameTime = (FPS * 60);
         gameStarted = false;
         shoot = false;
         movePowerup();

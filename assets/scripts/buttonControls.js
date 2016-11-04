@@ -44,7 +44,7 @@ function setupButtons() {
     level1Btn.on("click", function (evt) {
         if (state === 300) {
             state = 400;
-            letThereBeTurrets();
+            letThereBeTurrets1();
             player.x = 400;
             player.y = 380;
             if (firstTime === true) {
@@ -61,7 +61,7 @@ function setupButtons() {
     level2Btn.on("click", function (evt) {
         if (state === 300) {
             state = 500;
-            letThereBeTurrets();
+            letThereBeTurrets2();
             player.x = 400;
             player.y = 380;
             if (firstTime === true) {
@@ -84,7 +84,7 @@ function setupButtons() {
     level3Btn.on("click", function (evt) {
         if (state === 300) {
             state = 600;
-            letThereBeTurrets();
+            letThereBeTurrets3();
             player.x = 400;
             player.y = 380;
             if (firstTime === true) {

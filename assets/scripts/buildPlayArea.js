@@ -31,7 +31,7 @@ function createPlayArea() {
     level3.x = level3.y = 0;
     level3.visible = false;
 
-    //letThereBeTurrets();
+
 
     countdown.x = 400;
     countdown.y = 300;
@@ -47,44 +47,31 @@ function createPlayArea() {
     stage.update();
 }
 
-function letThereBeTurrets() {
+
+function letThereBeTurrets1() {
+    bTurrets.length = 0;
+    spawnBasicTurret();
+    spawnBasicTurret();
+    spawnBasicTurret();
+}
+
+function letThereBeTurrets2() {
+    bTurrets.length = 0;
+    gTurrets.length = 0;
+
+    spawnBasicTurret();
+    spawnLazerTurret();
+    spawnLazerTurret();
+}
+
+function letThereBeTurrets3() {
     dTurrets.length = 0;
     bTurrets.length = 0;
     gTurrets.length = 0;
 
-    createBasic("right", 75, 75);
-    bTurrets.push(turret);
-
-    createDuckfoot("right", 75, 550);
-    dTurrets.push(turret);
-
-    createLazer("left", 725, 50);
-    gTurrets.push(turret);
-
-    createDuckfoot("left", 725, 500);
-    dTurrets.push(turret);
-
-    createBasic("down", 675, 55);
-    bTurrets.push(turret);
-
-    createDuckfoot("down", 100, 55);
-    dTurrets.push(turret);
-
-    createLazer("up", 120, 545);
-    gTurrets.push(turret);
-
-    createDuckfoot("up", 700, 545);
-    bTurrets.push(turret);
-
-    for (var i = 0; i < bTurrets.length; i++) {
-        stage.addChild(bTurrets[i]);
-    }
-    for (var i = 0; i < dTurrets.length; i++) {
-        stage.addChild(dTurrets[i]);
-    }
-    for (var i = 0; i < gTurrets.length; i++) {
-        stage.addChild(gTurrets[i]);
-    }
+    spawnBasicTurret();
+    spawnDuckfootTurret();
+    spawnLazerTurret();
 }
 
 

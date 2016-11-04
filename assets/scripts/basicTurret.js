@@ -40,6 +40,7 @@ function moveBTurrets() {
                 bTurrets[i].y -= 5;
             }
         }
+        
         //x pos
         if (bTurrets[i].rotation === 90) {
             if (inbounds(bTurrets[i].x + 70, bTurrets[i].y) == false) {
@@ -53,6 +54,7 @@ function moveBTurrets() {
                 bTurrets[i].x -= 5;
             }
         }
+        
         //y pos
         if (bTurrets[i].rotation === 180) {
             if (inbounds(bTurrets[i].x, bTurrets[i].y - 30) == false) {
@@ -66,6 +68,7 @@ function moveBTurrets() {
                 bTurrets[i].y += 5;
             }
         }
+        
         //x pos
         if (bTurrets[i].rotation === 270) {
             if (inbounds(bTurrets[i].x - 70, bTurrets[i].y) == false) {
@@ -82,6 +85,70 @@ function moveBTurrets() {
         if (bTurrets[i].hitpoints === 0) {
             stage.removeChild(bTurrets[i]);
             bTurrets.splice(i--, 1);
+        }
+    }
+}
+
+function spawnBasicTurret() {
+    var randNum = Math.floor((Math.random() * 4) + 1);
+    var randX = Math.floor((Math.random() * 500) + 1);
+    var randY = Math.floor((Math.random() * 500) + 1);
+    var direction = "up";
+    var xpos = randX;
+    var ypos = 545;
+    if (randNum === 1) {
+        direction = "right";
+        xpos = 75;
+        ypos = randY;
+    } else if (randNum === 2) {
+        direction = "left";
+        xpos = 725;
+        ypos = randY;
+    } else if (randNum === 3) {
+        direction = "down";
+        xpos = randX;
+        ypos = 55;
+    }
+
+    createBasic(direction, xpos, ypos);
+    bTurrets.push(turret);
+    stage.addChild(turret);
+}
+var spawnTime = (FPS * 5);
+var totalGameTime = (FPS * 60);
+
+function spawnLevel1() {
+    spawnTime--;
+    if (spawnTime <= 0) {
+        spawnTime = (FPS * 3);
+        spawnBasicTurret();
+    }
+}
+
+function spawnLevel2() {
+    spawnTime--;
+    if (spawnTime <= 0) {
+        spawnTime = (FPS * 3);
+        var rand = Math.floor(Math.random() * 2);
+        if (rand === 0) {
+            spawnBasicTurret();
+        } else {
+            spawnLazerTurret();
+        }
+    }
+}
+
+function spawnLevel3() {
+    spawnTime--;
+    if (spawnTime <= 0) {
+        spawnTime = (FPS * 3);
+        var rand = Math.floor(Math.random() * 3);
+        if (rand === 0) {
+            spawnBasicTurret();
+        } else if(rand === 1) {
+            spawnLazerTurret();
+        }else{
+            spawnDuckfootTurret();
         }
     }
 }

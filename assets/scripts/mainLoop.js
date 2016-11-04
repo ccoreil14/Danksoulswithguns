@@ -29,15 +29,19 @@ function resetGameTimer() {
     looop = false;
 }
 
+var canWin = false;
+
 function runGameTimer() {
     checkPlayerBulletCollisionBTurrets();
     checkPlayerBulletCollisionDTurrets();
     checkPlayerBulletCollisionGTurrets();
     updateBullets();
     movePlayer();
-    checkDuckfootBulletCollision();
-    checkBasicBulletCollision();
-    checkLazerBulletCollision();
+    if (!cheat) {
+        checkDuckfootBulletCollision();
+        checkBasicBulletCollision();
+        checkLazerBulletCollision();
+    }
     updateDuckfootBullets();
     updateBasicBullets();
     updateLazerBullets();
@@ -60,8 +64,10 @@ function runGameTimer() {
             stage.removeChild(lazerBullets[i]);
         }
         if (state === 400 || state === 500 || state === 600) {
-            stopSound();
-            state = 900;
+            if (canWin === true) {
+                stopSound();
+                state = 900;
+            }
         }
 
     }
