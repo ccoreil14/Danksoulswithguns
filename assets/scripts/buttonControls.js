@@ -19,24 +19,25 @@ function setupButtons() {
     stage.addChild(playButton);
     stage.enableMouseOver();
     instructionsButton.on("click", function (evt) {
-		console.log(state);
-		if(state === 100){
-			state = 200;
-		}
-        
+        console.log(state);
+        if (state === 100) {
+            state = 200;
+        }
+
     });
     menuButton.on("click", function (evt) {
-		if(state === 200 || state === 800 || state === 900){
-			state = 100;
-		}
-        
+        if (state === 200 || state === 800 || state === 900) {
+            state = 100;
+            playMenuMusic();
+        }
+
     });
     var firstTime = true;
     playButton.on("click", function (evt) {
-		console.log(state);
-		if(state === 100){
-			state = 300;
-		}        
+        console.log(state);
+        if (state === 100) {
+            state = 300;
+        }
     });
 
     level1.on("click", function (evt) {
@@ -52,6 +53,8 @@ function setupButtons() {
                 movePowerupBack();
             }
             displaySprites();
+            stopSound();
+            playLevel1Music();
         }
     });
 
@@ -68,6 +71,14 @@ function setupButtons() {
                 movePowerupBack();
             }
             displaySprites();
+            stopSound();
+            if (eggOn === true) {
+                playLevel2MusicAlt();
+            } else {
+                playLevel2Music();
+            }
+
+
         }
     });
 
@@ -84,6 +95,41 @@ function setupButtons() {
                 movePowerupBack();
             }
             displaySprites();
+            stopSound();
+            if (eggOn === true) {
+                playEasterEggMusic();
+            } else {
+                playBossMusic();
+            }
+
         }
+    });
+
+    unmuteBtn.on("click", function (evt) {
+        stopSound();
+        unmuteBtn.y = -100;
+        muteBtn.y = 20;
+    });
+
+    muteBtn.on("click", function (evt) {
+        if (state === 100 || state === 200 || state === 300) {
+            playMenuMusic();
+        } else if (state === 400) {
+            playLevel1Music();
+        } else if (state === 500) {
+            if (eggOn === false) {
+                playLevel2Music();
+            } else {
+                playLevel2MusicAlt();
+            }
+        } else if (state === 600) {
+            if (eggOn === false) {
+                playBossMusic();
+            } else {
+                playEasterEggMusic();
+            }
+        }
+        muteBtn.y = -100;
+        unmuteBtn.y = 20;
     });
 }

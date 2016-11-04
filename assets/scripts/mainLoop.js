@@ -130,6 +130,8 @@ function isDead() {
             stage.removeChild(gTurrets[i]);
         }
         movePowerup();
+        stopSound();
+        playGameOver();
         state = 800;
     }
 }

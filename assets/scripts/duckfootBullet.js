@@ -1,6 +1,6 @@
 var duckfootBullets = [];
 
-var duckfootBulletSpeed = 15;
+var duckfootBulletSpeed = 10;
 
 function makeDuckfootBullet() {
 	for(var i = 0; i < dTurrets.length; i++){
@@ -72,7 +72,7 @@ function makeDuckfootBullet() {
 			duckfootBulletRight.rotation = 300;
 			
         }
-
+        playTurret3();
 		duckfootBullets.push(duckfootBulletLeft);
 		duckfootBullets.push(duckfootBulletRight);
         duckfootBullets.push(duckfootBullet);

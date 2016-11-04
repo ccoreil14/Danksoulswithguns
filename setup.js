@@ -57,6 +57,13 @@ manifest = [
         id: "levelTwo"
     },
     {
+        src: "images/muteBtn.png",
+        id: "muteBtn"
+    },{
+        src: "images/unmuteBtn.png",
+        id: "unmuteBtn"
+    },
+    {
         src: "images/A51.png",
         id: "levelThree"
     },
@@ -200,6 +207,7 @@ function loadFiles() {
     queue = new createjs.LoadQueue(true, "assets/");
     queue.on("complete", loadComplete, this);
     queue.loadManifest(manifest);
+
 }
 
 
@@ -220,7 +228,6 @@ function displaySprites() {
 }
 
 function loadComplete(evt) {
-	
     createPlayArea();
     createPlayer();
     createLevelSelect();
@@ -228,14 +235,19 @@ function loadComplete(evt) {
     createTitle();
     createInstructions();
     createVictory();
-    setupButtons();
     initCoorText();
+    createMuteBtns();
+    setupButtons();
     mouseInit();
-	//state = 100;
+    state = 100;
+//    console.log("load complete");
+    playMenuMusic();
+
     //    createGameTimer();
 }
 
 (function main() {
     setupCanvas();
     loadFiles();
+    
 })();

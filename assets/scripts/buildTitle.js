@@ -5,3 +5,5 @@ function createTitle(){
 	titleScreen.x = titleScreen.y = 0;
 	stage.addChild(titleScreen);
 }
+
+
