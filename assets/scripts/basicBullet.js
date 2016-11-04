@@ -1,42 +1,9 @@
 var basicBullets = [];
 
 var basicBulletSpeed = 15;
-
-//playerbullet.x = playerX;
-//    playerbullet.y = playerY;
-//    playerbullet.scaleY = .3;
-//    playerbullet.scaleX = .3;
-//    var meowX = mX - can.offsetLeft;
-//    var meowY = mY - can.offsetTop;
-//
-//    var deltaX = Math.abs(playerbullet.x - meowX);
-//    var deltaY = Math.abs(playerbullet.y - meowY);
-//
-//    var hyp = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY));
-//
-//    var speed = 15 / hyp;
-//
-//    playerbullet.addX = ((1 - speed) * playerbullet.x + speed * meowX) - playerX;
-//    playerbullet.addY = ((1 - speed) * playerbullet.y + speed * meowY) - playerY;
-//
-//    playerbullet.gotoAndPlay("spin");
-//    playerbullets.push(playerbullet);
-//    stage.addChild(playerbullet);
-//}
-//
-//function updateBullets() {
-//    for (var i = 0; i < playerbullets.length; i++) {
-//        playerbullets[i].x += playerbullets[i].addX;
-//        playerbullets[i].y += playerbullets[i].addY;
-//        if (inbounds(playerbullets[i].x, playerbullets[i].y) == false) {
-//            stage.removeChild(playerbullets[i]);
-//            playerbullets.splice(i--, 1);
-//        }
-//    }
-//}
+var angle;
 
 function makeBasicBullet() {
-    var angle;
     for (var i = 0; i < bTurrets.length; i++) {
         bTurrets[i].image = queue.getResult("basicFlash");
     }
@@ -64,7 +31,7 @@ function makeBasicBullet() {
             basicBullet.x = bTurrets[i].x - 25;
             basicBullet.y = bTurrets[i].y - 10;
         }
-
+        angle = Math.atan2(player.x - basicBullet.y, player.x - basicBullet.x);
         angle = angle * (180 / Math.PI);
 
         basicBullet.rotation = angle;
