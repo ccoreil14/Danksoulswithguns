@@ -97,8 +97,8 @@ manifest = [
         id: "lazerBullet"
     },
     {
-        src: "images/moon.png",
-        id: "playarea"
+        src: "images/credits.png",
+        id: "credits"
     },
     {
         src: "images/victory.png",
@@ -231,7 +231,7 @@ function loadComplete(evt) {
     setupButtons();
     initCoorText();
     mouseInit();
-	//state = 100;
+	state = 100;
     //    createGameTimer();
 }
 

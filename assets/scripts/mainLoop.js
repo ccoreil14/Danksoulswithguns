@@ -7,26 +7,17 @@ var looop = false;
 function loop() {
     if (gameStarted) {
         playerShotDelay();
+		runGameTimer();
     }
     if (frameCount == (FPS * 3)) {
         gameStarted = true;
     }
-    stateChange();
-    runGameTimer();
-    checkPlayerBulletCollisionBTurrets();
-    checkPlayerBulletCollisionDTurrets();
-    checkPlayerBulletCollisionGTurrets();
-    updateBullets();
-    movePlayer();
-    checkDuckfootBulletCollision();
-    checkBasicBulletCollision();
-    checkLazerBulletCollision();
-    updateDuckfootBullets();
-    updateBasicBullets();
-    updateLazerBullets();
-    updateHealth();
-    PlayerIFrames();
+	
+	stateChange();
+    
+    
     stage.update();
+    
 }
 createjs.Ticker.addEventListener("tick", loop);
 createjs.Ticker.setFPS(FPS);
@@ -44,6 +35,22 @@ function resetGameTimer() {
 }
 
 function runGameTimer() {
+	checkPlayerBulletCollisionBTurrets();
+    checkPlayerBulletCollisionDTurrets();
+    checkPlayerBulletCollisionGTurrets();
+    updateBullets();
+    movePlayer();
+    checkDuckfootBulletCollision();
+    checkBasicBulletCollision();
+    checkLazerBulletCollision();
+    updateDuckfootBullets();
+    updateBasicBullets();
+    updateLazerBullets();
+    updateHealth();
+    PlayerIFrames();
+	
+	
+	
     if (dTurrets.length === 0 && bTurrets.length === 0 && gTurrets.length === 0) {
         for (i = 0; i < duckfootBullets.length; i++) {
             stage.removeChild(duckfootBullets[i]);

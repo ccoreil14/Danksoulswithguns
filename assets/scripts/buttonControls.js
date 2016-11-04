@@ -39,10 +39,10 @@ function setupButtons() {
 		}        
     });
 
-    level1.on("click", function (evt) {
+    level1Btn.on("click", function (evt) {
         if (state === 300) {
             state = 400;
-            letThereBeTurrets();
+            //letThereBeTurrets();
             player.x = 400;
             player.y = 380;
             if (firstTime === true) {
@@ -55,10 +55,10 @@ function setupButtons() {
         }
     });
 
-    level2.on("click", function (evt) {
+    level2Btn.on("click", function (evt) {
         if (state === 300) {
             state = 500;
-            letThereBeTurrets();
+            //letThereBeTurrets();
             player.x = 400;
             player.y = 380;
             if (firstTime === true) {
@@ -71,10 +71,10 @@ function setupButtons() {
         }
     });
 
-    level3.on("click", function (evt) {
+    level3Btn.on("click", function (evt) {
         if (state === 300) {
             state = 600;
-            letThereBeTurrets();
+            //letThereBeTurrets();
             player.x = 400;
             player.y = 380;
             if (firstTime === true) {
