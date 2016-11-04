@@ -28,7 +28,6 @@ function setupButtons() {
     menuButton.on("click", function (evt) {
         if (state === 200 || state === 800 || state === 900) {
             state = 100;
-            playMenuMusic();
         }
 
     });
@@ -43,7 +42,7 @@ function setupButtons() {
     level1Btn.on("click", function (evt) {
         if (state === 300) {
             state = 400;
-            //letThereBeTurrets();
+            letThereBeTurrets();
             player.x = 400;
             player.y = 380;
             if (firstTime === true) {
@@ -52,7 +51,6 @@ function setupButtons() {
             } else {
                 movePowerupBack();
             }
-            displaySprites();
             stopSound();
             playLevel1Music();
         }
@@ -61,7 +59,7 @@ function setupButtons() {
     level2Btn.on("click", function (evt) {
         if (state === 300) {
             state = 500;
-            //letThereBeTurrets();
+            letThereBeTurrets();
             player.x = 400;
             player.y = 380;
             if (firstTime === true) {
@@ -70,7 +68,6 @@ function setupButtons() {
             } else {
                 movePowerupBack();
             }
-            displaySprites();
             stopSound();
             if (eggOn === true) {
                 playLevel2MusicAlt();
@@ -85,7 +82,7 @@ function setupButtons() {
     level3Btn.on("click", function (evt) {
         if (state === 300) {
             state = 600;
-            //letThereBeTurrets();
+            letThereBeTurrets();
             player.x = 400;
             player.y = 380;
             if (firstTime === true) {
@@ -94,7 +91,6 @@ function setupButtons() {
             } else {
                 movePowerupBack();
             }
-            displaySprites();
             stopSound();
             if (eggOn === true) {
                 playEasterEggMusic();

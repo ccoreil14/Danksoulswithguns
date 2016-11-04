@@ -34,7 +34,6 @@ function handleProgress() {
 
 function handleComplete() {
     loadProgressLabel.text = "100%";
-
     loadBar.visible = false;
     loadProgressLabel.visible = false;
     loadingScreen.visible = false;
@@ -57,9 +56,61 @@ function setupCanvas() {
 
 manifest = [
     {
-        src: "images/loadScreen.jpg",
-        id: "loading"
-    },
+        id: "BossGun",
+        src: "sounds/bossGun.mp3"
+        },
+    {
+        id: "BossMusic",
+        src: "sounds/BossMusic.mp3"
+        },
+    {
+        id: "EasterEggMusic",
+        src: "sounds/EasterEggMusic.mp3"
+        },
+    {
+        id: "GameOver",
+        src: "sounds/GameOver.mp3"
+        },
+    {
+        id: "Level1Music",
+        src: "sounds/Level1Music.mp3"
+        },
+    {
+        id: "Level2Music",
+        src: "sounds/Level2Music.mp3"
+        },
+    {
+        id: "Level2MusicAlt",
+        src: "sounds/Level2MusicAlt.mp3"
+        },
+    {
+        id: "Meme",
+        src: "sounds/Meme.mp3"
+        },
+    {
+        id: "MenuMusic",
+        src: "sounds/MenuMusic.mp3"
+        },
+    {
+        id: "PlayerGun",
+        src: "sounds/playerGun.wav"
+        },
+    {
+        id: "PowerUpGet",
+        src: "sounds/powerUp.mp3"
+        },
+    {
+        id: "Turret1",
+        src: "sounds/turret1.mp3"
+        },
+    {
+        id: "Turret2",
+        src: "sounds/turret2.mp3"
+        },
+    {
+        id: "Turret3",
+        src: "sounds/turret3.mp3"
+        },
     {
         src: "scripts/loadingScreen" + jsEnd
     },
@@ -106,7 +157,7 @@ manifest = [
     {
         src: "images/muteBtn.png",
         id: "muteBtn"
-    },{
+    }, {
         src: "images/unmuteBtn.png",
         id: "unmuteBtn"
     },
@@ -256,24 +307,6 @@ function loadFiles() {
     queue.addEventListener("progress", handleProgress);
     queue.on("complete", loadComplete, this);
     queue.loadManifest(manifest);
-
-}
-
-
-
-
-
-function displaySprites() {
-
-    //	for(i = 0; i < 5; i++){
-    //		blocks.x=i*31+20;
-    //		blocks.y=215;
-    //		blocks.gotoAndStop(i);
-    //		blockArray.push(blocks.clone());
-    //	}
-    //	for(j = 0; j < 5; j++){
-    //		stage.addChild(blockArray[j]);	
-    //	}
 }
 
 function loadComplete(evt) {
@@ -291,8 +324,6 @@ function loadComplete(evt) {
         setupButtons();
         initCoorText();
         mouseInit();
-        playMenuMusic();
-		playMenuMusic();
     }
     //    createGameTimer();
 }
@@ -301,5 +332,5 @@ function loadComplete(evt) {
     setupCanvas();
     createLoadScreen();
     loadFiles();
-    
+
 })();
