@@ -56,62 +56,6 @@ function setupCanvas() {
 
 manifest = [
     {
-        id: "BossGun",
-        src: "sounds/bossGun.mp3"
-        },
-    {
-        id: "BossMusic",
-        src: "sounds/BossMusic.mp3"
-        },
-    {
-        id: "EasterEggMusic",
-        src: "sounds/EasterEggMusic.mp3"
-        },
-    {
-        id: "GameOver",
-        src: "sounds/GameOver.mp3"
-        },
-    {
-        id: "Level1Music",
-        src: "sounds/Level1Music.mp3"
-        },
-    {
-        id: "Level2Music",
-        src: "sounds/Level2Music.mp3"
-        },
-    {
-        id: "Level2MusicAlt",
-        src: "sounds/Level2MusicAlt.mp3"
-        },
-    {
-        id: "Meme",
-        src: "sounds/Meme.mp3"
-        },
-    {
-        id: "MenuMusic",
-        src: "sounds/MenuMusic.mp3"
-        },
-    {
-        id: "PlayerGun",
-        src: "sounds/playerGun.wav"
-        },
-    {
-        id: "PowerUpGet",
-        src: "sounds/powerUp.mp3"
-        },
-    {
-        id: "Turret1",
-        src: "sounds/turret1.mp3"
-        },
-    {
-        id: "Turret2",
-        src: "sounds/turret2.mp3"
-        },
-    {
-        id: "Turret3",
-        src: "sounds/turret3.mp3"
-        },
-    {
         src: "scripts/loadingScreen" + jsEnd
     },
     {
@@ -311,20 +255,75 @@ manifest = [
 
 ];
 
+var sounds = [
+    {
+        id: "BossGun",
+        src: "bossGun.mp3"
+        },
+    {
+        id: "BossMusic",
+        src: "BossMusic.wav"
+        },
+    {
+        id: "EasterEggMusic",
+        src: "EasterEggMusic.wav"
+        },
+    {
+        id: "GameOver",
+        src: "GameOver.mp3"
+        },
+    {
+        id: "Level1Music",
+        src: "Level1Music.wav"
+        },
+    {
+        id: "Level2Music",
+        src: "Level2Music.wav"
+        },
+    {
+        id: "Level2MusicAlt",
+        src: "Level2MusicAlt.wav"
+        },
+    {
+        id: "Meme",
+        src: "Meme.mp3"
+        },
+    {
+        id: "MenuMusic",
+        src: "MenuMusic.wav"
+        },
+    {
+        id: "PlayerGun",
+        src: "playerGun.wav"
+        },
+    {
+        id: "PowerUpGet",
+        src: "powerUp.mp3"
+        },
+    {
+        id: "Turret3",
+        src: "turret3.mp3"
+        }
+
+    ];
+
 var queue;
 
 function loadFiles() {
+	createjs.Sound.alternateExtensions = ["mp3"];
+	createjs.Sound.registerSounds(sounds, "assets/sounds/");
     queue = new createjs.LoadQueue(true, "assets/");
+	queue.installPlugin(createjs.Sound);
     queue.addEventListener("complete", handleComplete);
     queue.addEventListener("progress", handleProgress);
+	//createjs.Sound.addEventListener("complete", loadComplete);	
     queue.on("complete", loadComplete, this);
     queue.loadManifest(manifest);
 }
 
 function loadComplete(evt) {
     if (!loaded) {
-        state = 100;
-        loaded = true
+        loaded = true;
         createPlayArea();
         createPlayer();
         createLevelSelect();
@@ -336,6 +335,7 @@ function loadComplete(evt) {
         setupButtons();
         initCoorText();
         mouseInit();
+		state = 100;
     }
     //    createGameTimer();
 }

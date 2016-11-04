@@ -1,66 +1,7 @@
 var audioPath = "assets/sounds/";
-var sounds = [
-    {
-        id: "BossGun",
-        src: "bossGun.mp3"
-        },
-    {
-        id: "BossMusic",
-        src: "BossMusic.mp3"
-        },
-    {
-        id: "EasterEggMusic",
-        src: "EasterEggMusic.mp3"
-        },
-    {
-        id: "GameOver",
-        src: "GameOver.mp3"
-        },
-    {
-        id: "Level1Music",
-        src: "Level1Music.mp3"
-        },
-    {
-        id: "Level2Music",
-        src: "Level2Music.mp3"
-        },
-    {
-        id: "Level2MusicAlt",
-        src: "Level2MusicAlt.mp3"
-        },
-    {
-        id: "Meme",
-        src: "Meme.mp3"
-        },
-    {
-        id: "MenuMusic",
-        src: "MenuMusic.mp3"
-        },
-    {
-        id: "PlayerGun",
-        src: "playerGun.wav"
-        },
-    {
-        id: "PowerUpGet",
-        src: "powerUp.mp3"
-        },
-    {
-        id: "Turret1",
-        src: "turret1.mp3"
-        },
-    {
-        id: "Turret2",
-        src: "turret2.mp3"
-        },
-    {
-        id: "Turret3",
-        src: "turret3.mp3"
-        }
 
-    ];
-createjs.Sound.alternateExtensions = ["mp3"];
-createjs.Sound.addEventListener("fileload", loadComplete);
-createjs.Sound.registerSounds(sounds, audioPath);
+//createjs.Sound.alternateExtensions = ["mp3"];
+//createjs.Sound.registerSounds(sounds, audioPath);
 
 function playBossGun(e) {
     createjs.Sound.play("BossGun");
@@ -100,14 +41,6 @@ function playMenuMusic(e) {
 
 function playPlayerGun(e) {
     createjs.Sound.play("PlayerGun");
-}
-
-function playTurret1(e) {
-    createjs.Sound.play("Turret1");
-}
-
-function playTurret2(e) {
-    createjs.Sound.play("Turret2");
 }
 
 function playTurret3(e) {

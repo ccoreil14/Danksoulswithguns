@@ -1,13 +1,13 @@
 var FPS = 30;
 var frameCount = 0;
 var timeUntilFire = 30;
-
 var looop = false;
 
 function loop() {
     if (gameStarted) {
         playerShotDelay();
     }
+	
     runGameTimer();
 
     stateChange();

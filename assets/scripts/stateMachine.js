@@ -1,6 +1,5 @@
 var state = 000;
 var play = true;
-
 function stateChange() {
     switch (state) {
         //loading state
@@ -9,9 +8,10 @@ function stateChange() {
         //title state
     case 100:
 			if(play){
-				playMenuMusic();
-				play = false;
-			}
+		createjs.Sound.play("MenuMusic");
+		play = false;
+	}
+			
         countdown.visible = false;
         healthBar.visible = false;
         level1Btn.visible = false;
