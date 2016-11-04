@@ -36,6 +36,7 @@ function checkPowerupHit() {
         player.tooStrong = true;
         powerTime = (FPS * 5);
         movePowerup();
+        playPowerUpGet();
     }
 
     if (powerTime <= 0 && powerupHit == true) {

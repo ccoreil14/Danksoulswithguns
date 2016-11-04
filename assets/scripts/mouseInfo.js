@@ -13,8 +13,6 @@ function initCoorText() {
     mouseY = new createjs.Text("Y: " + 0);
     mouseY.x = 50;
     mouseY.y = 70;
-    stage.addChild(mouseX);
-    stage.addChild(mouseY);
 }
 
 function mouseInit() {

@@ -6,6 +6,7 @@ var canvasX, CanvasY;
 var instructionsButton;
 var playButton;
 var menuButton;
+var loaded = false;
 
 
 function setupCanvas() {
@@ -16,6 +17,13 @@ function setupCanvas() {
 }
 
 manifest = [
+    {
+        src: "images/loadScreen.jpg",
+        id: "loading"
+    },
+    {
+        src: "scripts/loadingScreen" + jsEnd
+    },
     {
         src: "images/gameover.jpg",
         id: "gameover"
@@ -55,6 +63,13 @@ manifest = [
     {
         src: "images/space.png",
         id: "levelTwo"
+    },
+    {
+        src: "images/muteBtn.png",
+        id: "muteBtn"
+    },{
+        src: "images/unmuteBtn.png",
+        id: "unmuteBtn"
     },
     {
         src: "images/A51.png",
@@ -200,6 +215,7 @@ function loadFiles() {
     queue = new createjs.LoadQueue(true, "assets/");
     queue.on("complete", loadComplete, this);
     queue.loadManifest(manifest);
+
 }
 
 
@@ -220,22 +236,28 @@ function displaySprites() {
 }
 
 function loadComplete(evt) {
-	
-    createPlayArea();
-    createPlayer();
-    createLevelSelect();
-    createGameOver();
-    createTitle();
-    createInstructions();
-    createVictory();
-    setupButtons();
-    initCoorText();
-    mouseInit();
-	state = 100;
+    if (!loaded) {
+        state = 100;
+        loaded = true
+        createPlayArea();
+        createPlayer();
+        createLevelSelect();
+        createGameOver();
+        createTitle();
+        createInstructions();
+        createVictory();
+        createMuteBtns();
+        setupButtons();
+        initCoorText();
+        mouseInit();
+        createLoadScreen();
+		playMenuMusic();
+    }
     //    createGameTimer();
 }
 
 (function main() {
     setupCanvas();
     loadFiles();
+    
 })();

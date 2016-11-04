@@ -1,12 +1,12 @@
 var lazerBullets = [];
 
-var lazerBulletSpeed = 15;
+var lazerBulletSpeed = 5;
 
 function makeLazerBullet() {
-	for(var i = 0; i < gTurrets.length; i++){
-		gTurrets[i].image = queue.getResult("lazerFlash");
-	}
-	
+    for (var i = 0; i < gTurrets.length; i++) {
+        gTurrets[i].image = queue.getResult("lazerFlash");
+    }
+
     for (var i = 0; i < gTurrets.length; i++) {
         lazerBullet = new createjs.Bitmap(queue.getResult("lazerBullet"));
 
@@ -36,6 +36,7 @@ function makeLazerBullet() {
             lazerBullet.rotation = 270;
 
         }
+        playTurret3();
 
         lazerBullets.push(lazerBullet);
         stage.addChild(lazerBullet);

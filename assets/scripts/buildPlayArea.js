@@ -12,6 +12,7 @@ var turret;
 var gameStarted = false;
 
 var countdown = new createjs.Text(3, "50px Arial", "#FFF");
+countdown.visible = false;
 //var leftMovementUp = true;
 //var rightMovementUp = true;
 //var downMovementLeft = true;
@@ -48,40 +49,40 @@ function createPlayArea() {
 
 function letThereBeTurrets() {
     dTurrets.length = 0;
-	bTurrets.length = 0;
-	gTurrets.length = 0;
+    bTurrets.length = 0;
+    gTurrets.length = 0;
 
-	createBasic("right", 75, 75);
+    createBasic("right", 75, 75);
     bTurrets.push(turret);
 
-	createDuckfoot("right", 75, 550);
+    createDuckfoot("right", 75, 550);
     dTurrets.push(turret);
 
-	createLazer("left", 725, 50);
+    createLazer("left", 725, 50);
     gTurrets.push(turret);
 
-	createDuckfoot("left", 725, 500);
+    createDuckfoot("left", 725, 500);
     dTurrets.push(turret);
 
-	createBasic("down", 675, 55);
+    createBasic("down", 675, 55);
     bTurrets.push(turret);
 
-	createDuckfoot("down", 100, 55);
+    createDuckfoot("down", 100, 55);
     dTurrets.push(turret);
 
-	createLazer("up", 120, 545);
+    createLazer("up", 120, 545);
     gTurrets.push(turret);
 
-	createDuckfoot("up", 700, 545);
+    createDuckfoot("up", 700, 545);
     bTurrets.push(turret);
 
     for (var i = 0; i < bTurrets.length; i++) {
         stage.addChild(bTurrets[i]);
     }
-	for (var i = 0; i < dTurrets.length; i++) {
+    for (var i = 0; i < dTurrets.length; i++) {
         stage.addChild(dTurrets[i]);
     }
-	for (var i = 0; i < gTurrets.length; i++) {
+    for (var i = 0; i < gTurrets.length; i++) {
         stage.addChild(gTurrets[i]);
     }
 }
@@ -90,6 +91,7 @@ function letThereBeTurrets() {
 function createHealth() {
     graphics.beginFill(healthColor).drawRect(10, 2, 20, 100);
     healthBar = new createjs.Shape(graphics);
+    healthBar.visible = false;
     stage.addChild(healthBar);
     stage.update();
 }

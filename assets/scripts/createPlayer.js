@@ -30,6 +30,7 @@ function createPlayer() {
 
 function playerShoot(mX, mY) {
     makePlayerBullet(player.x, player.y, mX, mY);
+    playPlayerGun();
 }
 
 //checks player.gotHit boolean to track when the player has been hit, sets player.tooStrong to true so they take no damage
